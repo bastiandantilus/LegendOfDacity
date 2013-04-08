@@ -89,9 +89,29 @@
           window.setTimeout(callback, 1000 / 60);
         };
       })();
+      var init = function() {
+
+        gSM.init();
+        var sound = gSM.loadAsync("./sound/otomata_loop.ogg", function(s) {
+          gSM.playSound("./sound/otomata_loop.ogg", {
+            looping : true,
+            volume : 0.25
+          });
+        });
+        var menu_bump = gSM.loadAsync("./sound/bfxr_low_coin.wav", function() {
+        });
+        var menu_select = gSM.loadAsync("./sound/bfxr_magic.wav", function() {
+        });
+
+      }
+      document_onload = function() {
+        init();
+      };
+
+      document.addEventListener('DOMContentLoaded', document_onload, false);
 		</script>
 		<script src="js/core.js"></script>
-		<script src="js/soundManager.js"></script>
+		<script src="js/SoundManager.js"></script>
 		<script src="js/box2D.js"></script>
 		<script src="js/PhysicsEngine.js"></script>
 		<script src="js/GameEngine.js"></script>
