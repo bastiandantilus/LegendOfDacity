@@ -48,10 +48,10 @@
 								<a href="#">Home</a>
 							</li>
 							<!-- <li>
-								<a href="#about">About</a>
+							<a href="#about">About</a>
 							</li>
 							<li>
-								<a href="#contact">Contact</a>
+							<a href="#contact">Contact</a>
 							</li> -->
 						</ul>
 					</div><!--/.nav-collapse -->
@@ -62,11 +62,10 @@
 		<div class="container">
 
 			<h1>The Legend of Dacity</h1>
-			<canvas id="dacity" >
+			<canvas id="dacity" style="width:800px; height: 600px">
 				Available for play on HTML5 enabled browsers such as the Desktop version of Chrome.
 
 			</canvas>
-			<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 			<footer class="navbar">
 				<p id="contact">
 					&copy; Copyright 2013 by <a href="http://bastiandantilus.com" title="View Scott's blog">Scott Robert Lawrence</a>
@@ -81,5 +80,21 @@
 		<!-- Placed at the end of the document so the pages load faster -->
 		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 		<script src="bootstrap/js/bootstrap.min.js"></script>
+		<script src="js/yepnope.1.5.3-min.js"></script>
+		<script async>
+      // http://paulirish.com/2011/requestanimationframe-for-smart-animating/
+      window.requestAnimFrame = (function() {
+        return window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame || window.oRequestAnimationFrame || window.msRequestAnimationFrame ||
+        function(/* function */callback, /* DOMElement */element) {
+          window.setTimeout(callback, 1000 / 60);
+        };
+      })();
+		</script>
+		<script src="js/core.js"></script>
+		<script src="js/soundManager.js"></script>
+		<script src="js/box2D.js"></script>
+		<script src="js/PhysicsEngine.js"></script>
+		<script src="js/GameEngine.js"></script>
+		<script src="js/InputEngine.js"></script>
 	</body>
 </html>
