@@ -82,6 +82,14 @@
 		<script src="bootstrap/js/bootstrap.min.js"></script>
 		<script src="js/yepnope.1.5.3-min.js"></script>
 		<script async>
+		function xhrGet(reqUri,callback) {
+			var xhr = new XMLHttpRequest();
+		
+			xhr.open("GET", reqUri, true);
+			xhr.onload = callback;
+		
+			xhr.send();
+		}
       // http://paulirish.com/2011/requestanimationframe-for-smart-animating/
       window.requestAnimFrame = (function() {
         return window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame || window.oRequestAnimationFrame || window.msRequestAnimationFrame ||
@@ -116,5 +124,6 @@
 		<script src="js/PhysicsEngine.js"></script>
 		<script src="js/GameEngine.js"></script>
 		<script src="js/InputEngine.js"></script>
+		<script src="js/TiledMapClass.js"></script>
 	</body>
 </html>
