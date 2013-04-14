@@ -62,10 +62,12 @@
 		<div class="container">
 
 			<h1>The Legend of Dacity</h1>
-			<canvas id="dacity" style="width:800px; height: 600px">
+			<canvas id="dacity" style="display:none;">
 				Available for play on HTML5 enabled browsers such as the Desktop version of Chrome.
 
 			</canvas>
+			<a href="#" id="play_button" onclick="playSoundInstance('./sound/bfxr_magic.wav'); play_game()"
+			onmouseover="playSoundInstance('./sound/bfxr_low_coin.wav')"><strong>Play</strong></a>
 			<footer class="navbar">
 				<p id="contact">
 					&copy; Copyright 2013 by <a href="http://bastiandantilus.com" title="View Scott's blog">Scott Robert Lawrence</a>
@@ -82,17 +84,19 @@
 		<script src="bootstrap/js/bootstrap.min.js"></script>
 		<script src="js/yepnope.1.5.3-min.js"></script>
 		<script async>
-		function xhrGet(reqUri,callback) {
-			var xhr = new XMLHttpRequest();
-		
-			xhr.open("GET", reqUri, true);
-			xhr.onload = callback;
-		
-			xhr.send();
-		}
+      function xhrGet(reqUri, callback) {
+        var xhr = new XMLHttpRequest();
+
+        xhr.open("GET", reqUri, true);
+        xhr.onload = callback;
+
+        xhr.send();
+      }
+
       // http://paulirish.com/2011/requestanimationframe-for-smart-animating/
       window.requestAnimFrame = (function() {
-        return window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame || window.oRequestAnimationFrame || window.msRequestAnimationFrame ||
+        return window.requestAnimationFrame || window.webkitRequestAnimationFrame || 
+        	window.mozRequestAnimationFrame || window.oRequestAnimationFrame || window.msRequestAnimationFrame ||
         function(/* function */callback, /* DOMElement */element) {
           window.setTimeout(callback, 1000 / 60);
         };
@@ -100,12 +104,12 @@
       var init = function() {
 
         gSM.init();
-        var sound = gSM.loadAsync("./sound/otomata_loop.ogg", function(s) {
+        /*var sound = gSM.loadAsync("./sound/otomata_loop.ogg", function(s) {
           gSM.playSound("./sound/otomata_loop.ogg", {
             looping : true,
             volume : 0.25
           });
-        });
+        }); */
         var menu_bump = gSM.loadAsync("./sound/bfxr_low_coin.wav", function() {
         });
         var menu_select = gSM.loadAsync("./sound/bfxr_magic.wav", function() {
@@ -118,6 +122,7 @@
 
       document.addEventListener('DOMContentLoaded', document_onload, false);
 		</script>
+		<script src="js/index.js"></script>
 		<script src="js/core.js"></script>
 		<script src="js/SoundManager.js"></script>
 		<script src="js/box2D.js"></script>

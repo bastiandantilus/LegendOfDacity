@@ -23,10 +23,11 @@ PhysicsEngineClass = Class.extend({
     PHYSICS_LOOP_HZ : 1.0 / 60.0,
 
     //-----------------------------------------
-    create: function () {
+    create: function (fps, sleepy) {
+      this.PHYSICS_LOOP_HZ = 1.0 / fps;
         gPhysicsEngine.world = new World(
             new Vec2(0, 0), // Gravity vector
-            false           // Don't allow sleep
+            sleepy           // Don't allow sleep
         );
     },
 
@@ -39,7 +40,7 @@ PhysicsEngineClass = Class.extend({
             10,                 //velocity iterations
             10                  //position iterations
         );
-        gPhysicsEngine.world.ClearForces();
+        //gPhysicsEngine.world.ClearForces();
 
         return(Date.now() - start);
     },

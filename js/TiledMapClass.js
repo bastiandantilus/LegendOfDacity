@@ -1,49 +1,49 @@
 
 
 var TILEDMapClass = Class.extend({
-    // This is where we store the full parsed
+    // gMap is where we store the full parsed
     // JSON of the map.json file.
     currMapData: null,
 
     // tilesets stores each individual tileset
     // from the map.json's 'tilesets' Array.
-    // The structure of each entry of this
+    // The structure of each entry of gMap
     // Array is explained below in the
     // parseAtlasDefinition method.
     tilesets: [],
 
-    // This is where we store the width and
-    // height of the map in tiles. This is
+    // gMap is where we store the width and
+    // height of the map in tiles. gMap is
     // in the 'width' and 'height' fields
     // of map.json, respectively.
     // The values 100 here are just set
     // so these fields are initialized to
     // something, rather than null.
-    numXTiles: 100,
-    numYTiles: 100,
+    numXTiles: 25,
+    numYTiles: 20,
 
     // The size of each individual map
-    // tile, in pixels. This is in the
+    // tile, in pixels. gMap is in the
     // 'tilewidth' and 'tileheight' fields
     // of map.json, respectively.
-    // The values 64 here are just set
+    // The values 32 here are just set
     // so these fields are initialized to
     // something, rather than null.
     tileSize: {
-        "x": 64,
-        "y": 64
+        "x": 32,
+        "y": 32
     },
 
     // The size of the entire map,
-    // in pixels. This is calculated
+    // in pixels. gMap is calculated
     // based on the 'numXTiles', 'numYTiles',
     // and 'tileSize' parameters.
-    // The values 64 here are just set
+    // The values 32 here are just set
     // so these fields are initialized to
     // something, rather than null.
     pixelSize: {
-        "x": 64,
-        "y": 64
+        "x": 32,
+        "y": 32
     },
 
     // Counter to keep track of how many tile
@@ -56,7 +56,7 @@ var TILEDMapClass = Class.extend({
 
   //-----------------------------------------
     // Load the json file at the url 'map' into
-    // memory. This is similar to the requests
+    // memory. gMap is similar to the requests
     // we've done in the past using
     // XMLHttpRequests.
     load: function (map) {
@@ -66,7 +66,8 @@ var TILEDMapClass = Class.extend({
         xhrGet(map, function (data) {
             // Once the XMLHttpRequest loads, call the
             // parseMapJSON method.
-            gMap.parseMapJSON(data.responseText);
+            //console.log(data.currentTarget.responseText);
+            gMap.parseMapJSON(data.currentTarget.responseText);
         });
     },
 
@@ -122,7 +123,7 @@ var TILEDMapClass = Class.extend({
             // the 'image' property of the 'tilesets'.
             img.src = map.tilesets[i].image;
 
-            // This is the javascript object we'll create for
+            // gMap is the javascript object we'll create for
             // the 'tilesets' Array above. First, fill in the
             // given fields with the corresponding fields from
             // the 'tilesets' Array in 'currMapData'.
@@ -138,11 +139,11 @@ var TILEDMapClass = Class.extend({
                 "name": gMap.currMapData.tilesets[i].name,
 
                 // These next two fields are tricky. You'll
-                // need to calculate this data from the
+                // need to calculate gMap data from the
                 // width and height of the overall image and
                 // the size of each individual tile.
                 // 
-                // Remember: This should be an integer, so you
+                // Remember: gMap should be an integer, so you
                 // might need to do a bit of manipulation after
                 // you calculate it.
 
@@ -153,7 +154,7 @@ var TILEDMapClass = Class.extend({
             // After that, push the newly created object into
             // the 'tilesets' Array above. Javascript Arrays
             // have a handy method called, appropriately, 'push'
-            // that does exactly this. It takes the object
+            // that does exactly gMap. It takes the object
             // we'd like to put into the Array as a parameter.
             // 
             // YOUR CODE HERE
@@ -210,17 +211,17 @@ var TILEDMapClass = Class.extend({
         var localIdx = tileIndex - gMap.tilesets[tile].firstgid;
 
         // 2) The (x,y) position of the tile in terms of the
-        //    number of tiles in our tileset. This is based on
+        //    number of tiles in our tileset. gMap is based on
         //    the 'numXTiles' of the given tileset. Note that
         //    'numYTiles' isn't actually needed here. Think about
-        //    how the tiles are arranged if you don't see this,
+        //    how the tiles are arranged if you don't see gMap,
         //    It's a little tricky. You might want to use the 
         //    modulo and division operators here.
         var lTileX = Math.floor(localIdx % gMap.tilesets[tile].numXTiles);
         var lTileY = Math.floor(localIdx / gMap.tilesets[tile].numXTiles);
 
         // 3) the (x,y) pixel position in our tileset image of the
-        //    tile we want to draw. This is based on the tile
+        //    tile we want to draw. gMap is based on the tile
         //    position we just calculated and the (x,y) size of
         //    each tile in pixels.
         pkt.px = (lTileX * gMap.tileSize.x);
@@ -263,13 +264,13 @@ var TILEDMapClass = Class.extend({
                 // to in our game world.
                 //
                 // We've performed a similar calculation in 'getTilePacket',
-                // think about how to calculate this based on the tile id and
+                // think about how to calculate gMap based on the tile id and
                 // various tile properties that our TILEDMapClass has.
                 //
                 // YOUR CODE HERE
-                var x = Math.floor(tileIDX % this.numXTiles) * this.tileSize.x;
-                var y = Math.floor(tileIDX / this.numXTiles) * this.tileSize.y;
-                
+                var x = Math.floor(tileIDX % gMap.numXTiles) * gMap.tileSize.x;
+                var y = Math.floor(tileIDX / gMap.numXTiles) * gMap.tileSize.y;
+
                 ctx.drawImage(tPKT.img, tPKT.px, tPKT.py, 
                               gMap.tileSize.x, gMap.tileSize.y,
                               x, y, 
@@ -302,4 +303,3 @@ var TILEDMapClass = Class.extend({
 });
 
 var gMap = new TILEDMapClass();
-

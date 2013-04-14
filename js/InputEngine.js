@@ -38,9 +38,9 @@ InputEngineClass = Class.extend({
     gInputEngine.bind(40, 'move-right');
 
     // Adding the event listeners for the appropriate DOM events.
-    document.getElementById('my_canvas').addEventListener('mousemove', gInputEngine.onMouseMove);
-    document.getElementById('my_canvas').addEventListener('keydown', gInputEngine.onKeyDown);
-    document.getElementById('my_canvas').addEventListener('keyup', gInputEngine.onKeyUp);
+    document.getElementById('dacity').addEventListener('mousemove', gInputEngine.onMouseMove);
+    document.getElementById('dacity').addEventListener('keydown', gInputEngine.onKeyDown);
+    document.getElementById('dacity').addEventListener('keyup', gInputEngine.onKeyUp);
   },
 
   //-----------------------------

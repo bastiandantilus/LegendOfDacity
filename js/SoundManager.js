@@ -16,7 +16,8 @@ SoundManager = Class.extend({
     try {
       this._context = new webkitAudioContext();
     } catch (e) {
-      alert('Web Audio API is not supported in this browser');
+      this.enabled = false;
+      this._context = new AudioContext();
     }
 
     this._mainNode = this._context.createGainNode(0);
