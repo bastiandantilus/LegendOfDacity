@@ -151,7 +151,7 @@ ClientGameEngineClass = GameEngineClass.extend({
     // Record and send out inputs
     this.gPlayer0.pInput = pInput;
     this.gPlayer0.sendUpdates();
-    this.gSocket.sendq();
+    //this.gSocket.sendq();
 
     //recenter our map bounds based upon the player's centered position
     this.newMapPos.x = this.gPlayer0.pos.x - (this.gMap.viewRect.w * 0.5);
@@ -276,9 +276,10 @@ ClientGameEngineClass = GameEngineClass.extend({
     assets.push("./sound/sword_activate.ogg");
 
     loadAssets(assets, function() {
+      //console.log("loading assets....");
       xhrGet("img/grits_effects.json", false, function(data) {
         var obj = JSON.parse(data.response);
-
+        //console.log(data);
         var sheet = new SpriteSheetClass();
         gSpriteSheets['grits_effects'] = sheet;
         sheet.load("img/grits_effects.png");
@@ -293,7 +294,7 @@ ClientGameEngineClass = GameEngineClass.extend({
             cy = val.spriteSourceSize.y - (val.sourceSize.h * 0.5);
 
           }
-
+          //console.log("Defining " + key);
           sheet.defSprite(key, val.frame.x, val.frame.y, val.frame.w, val.frame.h, cx, cy);
         }
 

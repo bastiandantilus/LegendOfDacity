@@ -147,7 +147,7 @@ function drawSprite(spritename, posX, posY, settings)
     var spt = sheet.getStats(spritename);
     if(spt == null)
       continue;
-    
+
     __drawSpriteInternal(spt,sheet,posX,posY,settings);
     
     

@@ -53,7 +53,7 @@ var animate = function() {
   var gMap = gGameEngine.gMap;
   //context.clearRect(0, 0, canvas.width, canvas.height);
   //gGameEngine.draw(context);
-  var currentSSC = gSpriteSheets['./media/js/standalone/libs/gamedev_assets/texture.png'];
+  var currentSSC = gSpriteSheets['grits_effects'];
   var velocity = gGameEngine.gPlayer0.physBody.m_linearVelocity;
   var y_offset = 5;
   var x_offset = 5;
@@ -70,25 +70,27 @@ var animate = function() {
   }
 };
 
-
 var gMap = null;
 
 var play_game = function() {
   Logger = console;
   setup();
 
+  gGameEngine.preloadAssets();
   gGameEngine.setup();
-  
+
+  setInterval(function() {
+    window.requestAnimFrame(function() {
+      gGameEngine.run();
+      //animate();
+    });
+  }, 33);
+
   var spawnPoint = "Team0Spawn0";
   myloop = {};
   myloop.entity = gGameEngine.spawnPlayer("0", 0, spawnPoint, "Player", "Dacity", "Dacity");
   gGameEngine.gPlayer0 = myloop.entity;
-  
-  setInterval(function() {
-    window.requestAnimFrame(function() {
-      gGameEngine.run();
-      animate();
-    });
-  }, 33);
+  gGameEngine.gPlayer0.resetStats();
+
 }
 

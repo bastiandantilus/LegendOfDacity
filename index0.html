@@ -114,15 +114,6 @@
         }, 1000);
       }
 
-      function xhrGet(reqUri, callback) {
-        var xhr = new XMLHttpRequest();
-
-        xhr.open("GET", reqUri, true);
-        xhr.onload = callback;
-
-        xhr.send();
-      }
-
       // http://paulirish.com/2011/requestanimationframe-for-smart-animating/
       window.requestAnimFrame = (function() {
         func = window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame;
@@ -147,8 +138,8 @@
 
         var map = "img/fantasy.json";
 
-        xhrGet(map, function(data) {
-          parseMapJSON(data.currentTarget.responseText);
+        xhrGet(map, false, function(data) {
+          parseMapJSON(data.responseText);
         });
         var parseMapJSON = function(mapJSON) {
           window.map1 = JSON.parse(mapJSON);
@@ -160,6 +151,8 @@
 
       document.addEventListener('DOMContentLoaded', document_onload, false);
 		</script>
+		<script src="js/xhr.js"></script>
+		<script src="js/assetloader.js"></script>
 		<script src="js/index.js"></script>
 		<script src="js/core.js"></script>
 		<script src="js/Util.js"></script>
@@ -177,6 +170,7 @@
 		<script src="js/Entity.js"></script>
 		<script src="js/Player.js"></script>
 		<script src="js/ClientPlayer.js"></script>
+		<script src="js/PlayerSpawnEffect.js"></script>
 		<script src="js/SpawnPoint.js"></script>
 		<script src="js/SpriteSheet.js"></script>
 	</body>

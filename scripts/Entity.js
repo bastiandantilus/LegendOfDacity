@@ -73,7 +73,8 @@ EntityClass = Class.extend({
 
   //-----------------------------------------
   on_phys : function(msg) {
-    if (!IS_SERVER) {
+    console.log(msg);
+    //if (!IS_SERVER) {
       this.targetPhys = msg;
       this.tpOrig = {
         x : msg.x,
@@ -83,10 +84,10 @@ EntityClass = Class.extend({
         t : new Date().getTime()
       };
       this.snapped = false;
-    } else {
+    //} else {
       this.physBody.SetPosition(new Vec2(msg.x, msg.y));
       this.physBody.SetLinearVelocity(new Vec2(msg.vx, msg.vy));
-    }
+    //}
   },
 
   //-----------------------------------------
