@@ -146,6 +146,7 @@
                  "name":"Team0Spawn0",
                  "properties":
                     {
+                     "id":"Team0Spawn0",
                      "team":"0"
                     },
                  "type":"SpawnPoint",

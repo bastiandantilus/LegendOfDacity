@@ -14,7 +14,7 @@ See the License for the specific language governing permissions and
 
 SpawnPointClass = EntityClass.extend({
   onInit: function () {
-    //Logger.log('CREATING SPAWN POINT FOR TEAM ' + this.team);
+    Logger.log('CREATING SPAWN POINT FOR TEAM ' + this.team);
   },
   kill: function () {},
   update: function () {},

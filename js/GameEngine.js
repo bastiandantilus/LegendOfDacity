@@ -1,29 +1,51 @@
-/**
- * Minimally modified from the GRITS code as provided in Udacity's HTML5 Game Development class
- * @author Scott
- */
+/*Copyright 2012 Google Inc. All Rights Reserved.
+
+ Licensed under the Apache License, Version 2.0 (the "License");
+ you may not use this file except in compliance with the License.
+ You may obtain a copy of the License at
+
+ http://www.apache.org/licenses/LICENSE-2.0
+
+ Unless required by applicable law or agreed to in writing, software
+ distributed under the License is distributed on an "AS IS" BASIS,
+ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ See the License for the specific language governing permissions and
+ #limitations under the License.*/
 
 GameEngineClass = Class.extend({
 
-  move_dir : new Vec2(0, 0),
-  dirVec : new Vec2(0, 0),
+  clearColor : '#000000',
+  gravity : 0,
+  screen : {
+    x : 0,
+    y : 0
+  },
 
   entities : [],
-  factory : {},
+  namedEntities : {},
+  backgroundAnims : {},
+
+  spawnCounter : 0,
+
+  cellSize : 64,
+  timeSinceGameUpdate : 0,
+  timeSincePhysicsUpdate : 0,
+  clock : null,
+
   _deferredKill : [],
+  _deferredRespawn : [],
 
-  gPlayer0 : {
-    pos : {
-      x : 100,
-      y : 100
-    },
+  dataTypes : [],
+  localUserID : -1,
+  gMap : null,
+  gPlayer0 : null,
+  gPlayers : {},
+  fps : 0,
+  currentTick : 0,
+  lastFpsSec : 0,
 
-    walkSpeed : 1,
-
-    // This is hooking into the Box2D Physics
-    // library. We'll be going over this in
-    // more detail later.
-    mpPhysBody : new BodyDef()
+  init : function() {
+    this.clock = new TimerClass();
   },
 
   //-----------------------------
@@ -95,189 +117,317 @@ GameEngineClass = Class.extend({
       }
     });
 
-    gMap = new TILEDMapClass();
-    //TileMapLoaderClass();
-    this.gMap = gMap;
-    gMap.load("img/fantasy.json");
-
-    gInputEngine.setup();
+    //clm hax - force load a map
+    this.gMap = new TileMapLoaderClass();
+    this.gMap.load(map1);
 
   },
+  notifyPlayers : function(msg) {
+    if (!IS_SERVER)
+      return;
+    Server.broadcaster.q_statusMsg({
+      msg : msg
+    });
+  },
+  //-----------------------------
+  onCollisionTouch : function(bodyA, bodyB, impulse) {
+    if (impulse < 0.1)
+      return;
+    var uA = bodyA ? bodyA.GetUserData() : null;
+    var uB = bodyB ? bodyB.GetUserData() : null;
+    //CLM commented out due to perf spew
+    //Logger.log('Touch' + uA + ' ' + uB + ' ' + uA.ent + ' ' + uB.ent);
 
-  spawnEntity : function(typename) {
-    var ent = new (gGameEngine.factory[typename])();
+    if (uA != null) {
+      if (uA.ent != null && uA.ent.onTouch) {
+        uA.ent.onTouch(bodyB, null, impulse);
+      }
+    }
 
+    if (uB != null) {
+      if (uB.ent != null && uB.ent.onTouch) {
+        uB.ent.onTouch(bodyA, null, impulse);
+      }
+    }
+  },
+
+  //returns time in seconds
+  getTime : function() {
+    return this.currentTick * 0.05;
+  },
+
+  getEntityByName : function(name) {
+    return this.namedEntities[name];
+  },
+
+  getEntityById : function(id) {
+    for (var i = 0; i < this.entities.length; i++) {
+      var ent = this.entities[i];
+      if (ent.id == id) {
+        return ent;
+      }
+    }
+    return null;
+  },
+
+  getEntitiesByLocation : function(pos) {
+    var a = [];
+    for (var i = 0; i < this.entities.length; i++) {
+      var ent = this.entities[i];
+      if (ent.pos.x <= pos.x && ent.pos.y <= pos.y && (ent.pos.x + ent.size.x) > pos.x && (ent.pos.y + ent.size.y) > pos.y) {
+        a.push(ent);
+      }
+    }
+    return a;
+  },
+
+  getEntitiesWithinCircle : function(center, radius) {
+    var a = [];
+    for (var i = 0; i < this.entities.length; i++) {
+      var ent = this.entities[i];
+      var dist = Math.sqrt((ent.pos.x - center.x) * (ent.pos.x - center.x) + (ent.pos.y - center.y) * (ent.pos.y - center.y));
+      if (dist <= radius) {
+        a.push(ent);
+      }
+    }
+    return a;
+  },
+
+  getEntitiesByType : function(typeName) {
+    var entityClass = Factory.nameClassMap[typeName];
+    var a = [];
+    for (var i = 0; i < this.entities.length; i++) {
+      var ent = this.entities[i];
+      if ( ent instanceof entityClass && !ent._killed) {
+        a.push(ent);
+      }
+    }
+    return a;
+  },
+
+  nextSpawnId : function() {
+    return this.spawnCounter++;
+  },
+
+  onSpawned : function() {
+  },
+  onUnspawned : function() {
+  },
+
+  spawnEntity : function(typename, x, y, settings) {
+    var entityClass = Factory.nameClassMap[typename];
+    var es = settings || {};
+    es.type = typename;
+    var ent = new (entityClass)(x, y, es);
+    var msg = "SPAWNING " + typename + " WITH ID " + ent.id;
+    if (ent.name) {
+      msg += " WITH NAME " + ent.name;
+    }
+    if (es.displayName) {
+      msg += " WITH displayName " + es.displayName;
+    }
+    if (es.userID) {
+      msg += " WITH userID " + es.userID;
+    }
+    if (es.displayName) {
+      Logger.log(msg);
+    }
     gGameEngine.entities.push(ent);
-
+    if (ent.name) {
+      gGameEngine.namedEntities[ent.name] = ent;
+    }
+    gGameEngine.onSpawned(ent);
+    if (ent.type == "Player") {
+      this.gPlayers[ent.name] = ent;
+    }
     return ent;
   },
 
-  removeEntity : function(removeEnt) {
-    // We don't do anything with this right now.
-    // We'll fill it in later this unit.
+  respawnEntity : function(respkt) {
+    if (IS_SERVER) {
+      var player = this.namedEntities[respkt.from];
+      if (!player) {
+        Logger.log("player.id = " + respkt.from + " Not found for respawn");
+        return;
+      }
+
+      this._deferredRespawn.push(respkt);
+
+    }
+
+  },
+
+  removeEntity : function(ent) {
+    if (!ent)
+      return;
+
+    this.onUnspawned(ent);
+
+    // Remove this entity from the named entities
+    if (ent.name) {
+      delete this.namedEntities[ent.name];
+      delete this.gPlayers[ent.name];
+    }
+
+    // We can not remove the entity from the entities[] array in the midst
+    // of an update cycle, so remember all killed entities and remove
+    // them later.
+    // Also make sure this entity doesn't collide anymore and won't get
+    // updated or checked
+    ent._killed = true;
+
+    this._deferredKill.push(ent);
+  },
+
+  run : function() {
+    this.fps++;
+    GlobalTimer.step();
+
+    var timeElapsed = this.clock.tick();
+    this.timeSinceGameUpdate += timeElapsed;
+    this.timeSincePhysicsUpdate += timeElapsed;
+
+    while (this.timeSinceGameUpdate >= Constants.GAME_LOOP_HZ && this.timeSincePhysicsUpdate >= Constants.PHYSICS_LOOP_HZ) {
+      // JJG: We should to do a physics update immediately after a game update to avoid
+      //      the case where we draw after a game update has run but before a physics update
+      this.update();
+      this.updatePhysics();
+      this.timeSinceGameUpdate -= Constants.GAME_LOOP_HZ;
+      this.timeSincePhysicsUpdate -= Constants.PHYSICS_LOOP_HZ;
+    }
+
+    while (this.timeSincePhysicsUpdate >= Constants.PHYSICS_LOOP_HZ) {
+      // JJG: Do extra physics updates
+      this.updatePhysics();
+      this.timeSincePhysicsUpdate -= Constants.PHYSICS_LOOP_HZ;
+    }
+
+    if (this.lastFpsSec < this.currentTick / Constants.GAME_UPDATES_PER_SEC && this.currentTick % Constants.GAME_UPDATES_PER_SEC == 0) {
+      this.lastFpsSec = this.currentTick / Constants.GAME_UPDATES_PER_SEC;
+      this.fps = 0;
+    }
   },
 
   update : function() {
-    gGameEngine.draw();
-    gGameEngine.updatePlayer();
+    this.currentTick++;
 
-    // Loop through the entities and call that entity's
-    // 'update' method, but only do it if that entity's
-    // '_killed' flag is set to true.
-    //
-    // Otherwise, push that entity onto the '_deferredKill'
-    // list defined above.
-    for (var i = 0; i < gGameEngine.entities.length; i++) {
-      var ent = gGameEngine.entities[i];
+    // entities
+    for (var i = 0; i < this.entities.length; i++) {
+      var ent = this.entities[i];
       if (!ent._killed) {
         ent.update();
-      } else {
-        gGameEngine._deferredKill.push(ent);
       }
     }
+    // remove all killed entities
+    for (var i = 0; i < this._deferredKill.length; i++) {
+      this.entities.erase(this._deferredKill[i]);
+    }
+    this._deferredKill = [];
 
-    // Loop through the '_deferredKill' list and remove each
-    // entity in it from the 'entities' list.
-    //
-    // Once you're done looping through '_deferredKill', set
-    // it back to the empty array, indicating all entities
-    // in it have been removed from the 'entities' list.
-    for (var j = 0; j < gGameEngine._deferredKill.length; j++) {
-      gGameEngine.entities.erase(gGameEngine._deferredKill[j]);
+    for (var p in this.gPlayers) {
+      this.gPlayers[p].applyInputs();
     }
 
-    gGameEngine._deferredKill = [];
+    //respawn entities
 
+    for (var i = 0; i < this._deferredRespawn.length; i++) {
+
+      var pkt = this._deferredRespawn[i];
+      var p = this.namedEntities[pkt.from];
+      var spawnPoint = "Team" + p.team + "Spawn0";
+      var ent = this.getEntityByName(spawnPoint);
+      if (!ent) {
+        Logger.log("Did not find spawn point");
+        return;
+      }
+      p.resetStats();
+      p.centerAt(ent.pos);
+      var wep_pktt = {
+        from : p.name,
+        wep0 : pkt.wep0,
+        wep1 : pkt.wep1,
+        wep2 : pkt.wep2,
+      };
+      p.on_setWeapons(wep_pktt);
+      p.toAll.q_setWeapons(wep_pktt);
+      p.toAll.q_setPosition(ent.pos);
+
+      Logger.log("Respawned entity " + p.name + "at location " + p.pos.x + "," + p.pos.y);
+    }
+    this._deferredRespawn.length = 0;
+
+  },
+
+  updatePhysics : function() {
     gPhysicsEngine.update();
 
-  },
-
-  updatePlayer : function() {
-
-    // move_dir is a Vec2 object from the Box2d
-    // physics library, which is of the form
-    // {
-    //     x: 0,
-    //     y: 0
-    // }
-    //
-    // We'll be going more into Box2D later in
-    // the course. The Vec2 constructor takes
-    // an initial x and y value to set the
-    // vector to.
-    //var move_dir = new Vec2(0, 0);
-
-    if (gInputEngine.actions['move-up']) {
-      // adjust the move_dir by 1 in the
-      // y direction. Remember, in our
-      // coordinate system, up is the
-      // negative-y direction, and down
-      // is the positive-y direction!
-      gGameEngine.move_dir.y -= 1;
+    for (var p in this.gPlayers) {
+      var plyr = this.gPlayers[p];
+      var pPos = plyr.physBody.GetPosition();
+      plyr.pos.x = pPos.x;
+      plyr.pos.y = pPos.y;
     }
-    if (gInputEngine.actions['move-down']) {
-      // adjust the move_dir by 1 in the
-      // y direction. Remember, in our
-      // coordinate system, up is the
-      // negative-y direction, and down
-      // is the positive-y direction!
-      gGameEngine.move_dir.y += 1;
-    }
-    if (gInputEngine.actions['move-left']) {
-      // adjust the move_dir by 1 in the
-      // x direction.
-      gGameEngine.move_dir.x -= 1;
-    }
-    if (gInputEngine.actions['move-right']) {
-      // adjust the move_dir by 1 in the
-      // x direction.
-      gGameEngine.move_dir.x += 1;
-    }
-
-    // After modifying the move_dir above, we check
-    // if the vector is non-zero. If it is, we adjust
-    // the vector length based on the player's walk
-    // speed.
-    if (gGameEngine.move_dir.LengthSquared()) {
-      // First set 'move_dir' to a unit vector in
-      // the same direction it's currently pointing.
-      gGameEngine.move_dir.Normalize();
-
-      // Next, multiply 'move_dir' by the player's
-      // set 'walkSpeed'. We do this in case we might
-      // want to change the player's walk speed due
-      // to a power-up, etc.
-      gGameEngine.move_dir.Multiply(gGameEngine.gPlayer0.walkSpeed);
-    }
-    //console.log(gGameEngine.gPlayer0.mpPhysBody.linearVelocity);
-    gGameEngine.gPlayer0.mpPhysBody.linearVelocity.Set(gGameEngine.move_dir.x, gGameEngine.move_dir.y);
-
-    // Keyboard based facing & firing direction
-    if (gInputEngine.actions['fire0'] || gInputEngine.actions['fire1']) {
-
-      var playerInScreenSpace = {
-        x : gRenderEngine.getScreenPosition(this.gPlayer0.pos).x,
-        y : gRenderEngine.getScreenPosition(this.gPlayer0.pos).y
-      };
-
-      gGameEngine.dirVec.x = gInputEngine.mouse.x - playerInScreenSpace.x;
-      gGameEngine.dirVec.y = gInputEngine.mouse.y - playerInScreenSpace.y;
-
-      gGameEngine.dirVec.normalize();
-    }
-
-    // Modify dirVec based on the current state of the 'fire-up',
-    // 'fire-down', 'fire-left', 'fire-right'.
-    if (gInputEngine.actions['fire-up']) {
-      gGameEngine.dirVec.y--;
-    } else if (gInputEngine.actions['fire-down']) {
-      gGameEngine.dirVec.y++;
-    }
-
-    if (gInputEngine.actions['fire-left']) {
-      gGameEngine.dirVec.x--;
-    } else if (gInputEngine.actions['fire-right']) {
-      gGameEngine.dirVec.x++;
-    }
-
   },
   //-----------------------------
-  run : function() {
-    this.parent();
+  dealDmg : function(fromObj, toPlayer, amt) {
+    if (!IS_SERVER)
+      return;
+    var objOwner = fromObj.owningPlayer;
+    if (toPlayer == null || toPlayer._killed)
+      return false;
 
-    var fractionOfNextPhysicsUpdate = this.timeSincePhysicsUpdate / Constants.PHYSICS_LOOP_HZ;
+    if (toPlayer.takeDamage)
+      toPlayer.takeDamage(amt);
 
-    this.update();
-
-    //gGuiEngine.draw();
-
-    this.draw(fractionOfNextPhysicsUpdate);
-    gInputEngine.clearPressed();
+    if (toPlayer.health <= 0) {
+      this.notifyPlayers(toPlayer.displayName + " was killed by " + objOwner.displayName);
+      objOwner.numKills++;
+    }
   },
-  draw : function() {
-    // Draw map. Note that we're passing a canvas context
-    // of 'null' in. This would normally be our game context,
-    // but we don't need to grade this here.
-    gMap.draw(context);
+  //-----------------------------
+  on_collision : function(msg) {
+    var ent0 = this.getEntityByName(msg.ent0);
+    var ent1 = this.getEntityByName(msg.ent1);
+    if (ent0 == null)
+      ent0 = this.getEntityById(msg.ent0);
+    if (ent1 == null)
+      ent1 = this.getEntityById(msg.ent1);
+    var body0 = null;
+    var body1 = null;
 
-    // Bucket entities by zIndex
-    var fudgeVariance = 128;
-    var zIndex_array = [];
-    var entities_bucketed_by_zIndex = {};
-    gGameEngine.entities.forEach(function(entity) {
-      //don't draw entities that are off screen
-      if (entity.pos.x >= gMap.viewRect.x - fudgeVariance && entity.pos.x < gMap.viewRect.x + gMap.viewRect.w + fudgeVariance && entity.pos.y >= gMap.viewRect.y - fudgeVariance && entity.pos.y < gMap.viewRect.y + gMap.viewRect.h + fudgeVariance) {
-        // Bucket the entities in the entities list by their zindex
-        // property.
-        // YOUR CODE HERE
-        entities_bucketed_by_zIndex[entity.zIndex].push(entity);
-      }
+    if (ent0 != null)
+      body0 = ent0.physBody;
+    if (ent1 != null)
+      body1 = ent1.physBody;
+
+    this.onCollisionTouch(body0, body1, msg.impulse);
+
+  },
+
+  //-----------------------------
+  spawnPlayer : function(id, teamID, spname, typename, userID, displayName) {
+    Logger.log("spawn " + id + " at " + spname);
+    var ent = this.getEntityByName(spname);
+    if (ent == null) {
+      console.log("could not find ent " + spname);
+      return -1;
+    }
+    this.gPlayers[id] = this.spawnEntity(typename, ent.pos.x, ent.pos.y, {
+      name : '!' + id,
+      team : teamID,
+      userID : userID,
+      displayName : displayName
     });
-
-    // Draw entities sorted by zIndex
-
+    this.gPlayers[id].health = 0;
+    return this.gPlayers[id];
   },
+  //-----------------------------
+  unspawnPlayer : function(id) {
+    if (this.gPlayers[id])
+      this.notifyPlayers(this.gPlayers[id].displayName + " disconnected.");
+    this.removeEntity(this.gPlayers[id]);
+  }
 });
 
 var gGameEngine = new GameEngineClass();
-
+//exports.Class = GameEngineClass;

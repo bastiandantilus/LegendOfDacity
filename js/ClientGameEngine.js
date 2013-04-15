@@ -166,7 +166,7 @@ ClientGameEngineClass = GameEngineClass.extend({
     this.update();
     //CLM why was this removed?
 
-    gGuiEngine.draw();
+    //gGuiEngine.draw();
 
     this.draw(fractionOfNextPhysicsUpdate);
     gInputEngine.clearPressed();
@@ -211,12 +211,12 @@ ClientGameEngineClass = GameEngineClass.extend({
   requestRespawn : function() {
 
     Logger.log("requesting respawn for " + this.gPlayer0.name);
-    gGameEngine.gSocket.send_respawn({
+    /* gGameEngine.gSocket.send_respawn({
       from : this.gPlayer0.name,
       wep0 : gWeapons_DB.weapons[gGuiEngine.pendingWeaponSwapIdxs[0]].logicClass,
       wep1 : gWeapons_DB.weapons[gGuiEngine.pendingWeaponSwapIdxs[1]].logicClass,
       wep2 : gWeapons_DB.weapons[gGuiEngine.pendingWeaponSwapIdxs[2]].logicClass,
-    });
+    }); */
 
   },
   //-----------------------------
@@ -245,7 +245,7 @@ ClientGameEngineClass = GameEngineClass.extend({
         looping : false,
         volume : volume
       });
-      //				gSM.playsObj.play(false);
+      //        gSM.playsObj.play(false);
     });
   },
   //-----------------------------

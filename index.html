@@ -62,11 +62,11 @@
 		<div class="container">
 
 			<h1>The Legend of Dacity</h1>
-			<canvas id="dacity" style="display:none;">
+			<canvas id="canvas" style="display:none;">
 				Available for play on HTML5 enabled browsers such as the Desktop version of Chrome.
 
 			</canvas>
-			<a href="#" id="play_button" onclick="playSoundInstance('./sound/bfxr_magic.wav'); play_game()"
+			<a href="#" id="play_button" onclick="playSoundInstance('./sound/bfxr_magic.wav'); play_game(); return false;"
 			onmouseover="playSoundInstance('./sound/bfxr_low_coin.wav')"><strong>Play</strong></a>
 			<footer class="navbar">
 				<p id="contact">
@@ -83,7 +83,37 @@
 		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 		<script src="bootstrap/js/bootstrap.min.js"></script>
 		<script src="js/yepnope.1.5.3-min.js"></script>
+		<script type="text/javascript" id="GENERALJS">
+      //-----------------------------------------
+      var $doc = function(selector) {
+        return selector.charAt(0) == '#' ? document.getElementById(selector.substr(1)) : document.getElementsByTagName(selector);
+      };
+
+      //-----------------------------------------
+      var $new = function(name) {
+        return document.createElement(name);
+      };
+
+      function checkWait(conditionFunction, resultFunction) {
+        var tev = setInterval(function() {
+          if (conditionFunction()) {
+            resultFunction();
+            clearInterval(tev)
+          }
+        }, 1000);
+      }
+
+		</script>
 		<script async>
+      function checkWait(conditionFunction, resultFunction) {
+        var tev = setInterval(function() {
+          if (conditionFunction()) {
+            resultFunction();
+            clearInterval(tev)
+          }
+        }, 1000);
+      }
+
       function xhrGet(reqUri, callback) {
         var xhr = new XMLHttpRequest();
 
@@ -95,27 +125,35 @@
 
       // http://paulirish.com/2011/requestanimationframe-for-smart-animating/
       window.requestAnimFrame = (function() {
-        return window.requestAnimationFrame || window.webkitRequestAnimationFrame || 
-        	window.mozRequestAnimationFrame || window.oRequestAnimationFrame || window.msRequestAnimationFrame ||
-        function(/* function */callback, /* DOMElement */element) {
+        func = window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame;
+        func = func || window.oRequestAnimationFrame || window.msRequestAnimationFrame;
+        return func || (function(/* function */callback, /* DOMElement */element) {
           window.setTimeout(callback, 1000 / 60);
-        };
+        });
       })();
-      var init = function() {
 
+      var init = function() {
         gSM.init();
         /*var sound = gSM.loadAsync("./sound/otomata_loop.ogg", function(s) {
-          gSM.playSound("./sound/otomata_loop.ogg", {
-            looping : true,
-            volume : 0.25
-          });
-        }); */
+         gSM.playSound("./sound/otomata_loop.ogg", {
+         looping : true,
+         volume : 0.25
+         });
+         }); */
         var menu_bump = gSM.loadAsync("./sound/bfxr_low_coin.wav", function() {
         });
         var menu_select = gSM.loadAsync("./sound/bfxr_magic.wav", function() {
         });
 
-      }
+        var map = "img/fantasy.json";
+
+        xhrGet(map, function(data) {
+          parseMapJSON(data.currentTarget.responseText);
+        });
+        var parseMapJSON = function(mapJSON) {
+          window.map1 = JSON.parse(mapJSON);
+        }
+      };
       document_onload = function() {
         init();
       };
@@ -124,11 +162,22 @@
 		</script>
 		<script src="js/index.js"></script>
 		<script src="js/core.js"></script>
+		<script src="js/Util.js"></script>
+		<script src="js/Logger.js"></script>
+		<script src="js/Timer.js"></script>
 		<script src="js/SoundManager.js"></script>
 		<script src="js/box2D.js"></script>
 		<script src="js/PhysicsEngine.js"></script>
+		<script src="js/RenderEngine.js"></script>
 		<script src="js/GameEngine.js"></script>
+		<script src="js/ClientGameEngine.js"></script>
 		<script src="js/InputEngine.js"></script>
-		<script src="js/TiledMapClass.js"></script>
+		<script src="js/TileMap.js"></script>
+		<script src="js/Factory.js"></script>
+		<script src="js/Entity.js"></script>
+		<script src="js/Player.js"></script>
+		<script src="js/ClientPlayer.js"></script>
+		<script src="js/SpawnPoint.js"></script>
+		<script src="js/SpriteSheet.js"></script>
 	</body>
 </html>
