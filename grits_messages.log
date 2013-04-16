@@ -1,0 +1,592 @@
+Object {youare: "!1", color: 1}
+Ready to rock 
+Object {stack: Array[11]}
+ Logger.js:23
+welcome !1 
+Object {stack: Array[11]}
+ Logger.js:23
+Object {msg: "bot*855 joined."}
+Object {health: 0, energy: 100, walkSpeed: 260, powerUpTime: 0, numKills: 0…}
+Object {now: 1366055005827}
+Object {now: 1366055006788}
+Object {now: 1366055007788}
+requesting respawn for !1 
+Object {stack: Array[7]}
+ Logger.js:23
+Object {from: "!1", wep0: "MachineGun", wep1: "RocketLauncher", wep2: "Landmine"}
+Object {from: "!1", x: 5121, y: 5118}
+Object {health: 100, energy: 100, walkSpeed: 260, powerUpTime: 0, numKills: 0…}
+Object {now: 1366055008788}
+Object {now: 1366055009788}
+Object {now: 1366055010788}
+Object {id: "!1_MGB_0", type: "SimpleProjectile", x: 5075, y: 5092, settings: "{"name":"!1_MGB_0","owner":"!1","faceAngleRadians"…:"./sound/bounce0.ogg","type":"SimpleProjectile"}"}
+Object {health: 100, energy: 98, walkSpeed: 260, powerUpTime: 0, numKills: 0…}
+Object {x: 5040, y: 5092, vx: -700, vy: 0, from: "!1_MGB_0"}
+Object {x: 5005, y: 5092, vx: -700, vy: 0, from: "!1_MGB_0"}
+Object {x: 4970, y: 5092, vx: -700, vy: 0, from: "!1_MGB_0"}
+Object {now: 1366055011788}
+Object {x: 4935, y: 5092, vx: -700, vy: 0, from: "!1_MGB_0"}
+Object {id: "!1_MGB_1", type: "SimpleProjectile", x: 5075, y: 5092, settings: "{"name":"!1_MGB_1","owner":"!1","faceAngleRadians"…:"./sound/bounce0.ogg","type":"SimpleProjectile"}"}
+Object {health: 100, energy: 96, walkSpeed: 260, powerUpTime: 0, numKills: 0…}
+Object {x: 4900, y: 5092, vx: -700, vy: 0, from: "!1_MGB_0"}
+Object {x: 5040, y: 5092, vx: -700, vy: 0, from: "!1_MGB_1"}
+Object {x: 4865, y: 5092, vx: -700, vy: 0, from: "!1_MGB_0"}
+Object {x: 5005, y: 5092, vx: -700, vy: 0, from: "!1_MGB_1"}
+Object {x: 4830, y: 5092, vx: -700, vy: 0, from: "!1_MGB_0"}
+Object {x: 4970, y: 5092, vx: -700, vy: 0, from: "!1_MGB_1"}
+Object {x: 4795, y: 5092, vx: -700, vy: 0, from: "!1_MGB_0"}
+Object {x: 4935, y: 5092, vx: -700, vy: 0, from: "!1_MGB_1"}
+Object {id: "!1_MGB_2", type: "SimpleProjectile", x: 5075, y: 5092, settings: "{"name":"!1_MGB_2","owner":"!1","faceAngleRadians"…:"./sound/bounce0.ogg","type":"SimpleProjectile"}"}
+Object {health: 100, energy: 94, walkSpeed: 260, powerUpTime: 0, numKills: 0…}
+Object {x: 4760, y: 5092, vx: -700, vy: 0, from: "!1_MGB_0"}
+Object {x: 4900, y: 5092, vx: -700, vy: 0, from: "!1_MGB_1"}
+Object {x: 5040, y: 5092, vx: -700, vy: 0, from: "!1_MGB_2"}
+Object {x: 4725, y: 5092, vx: -700, vy: 0, from: "!1_MGB_0"}
+Object {x: 4865, y: 5092, vx: -700, vy: 0, from: "!1_MGB_1"}
+Object {x: 5005, y: 5092, vx: -700, vy: 0, from: "!1_MGB_2"}
+Object {x: 4690, y: 5092, vx: -700, vy: 0, from: "!1_MGB_0"}
+Object {x: 4830, y: 5092, vx: -700, vy: 0, from: "!1_MGB_1"}
+Object {x: 4970, y: 5092, vx: -700, vy: 0, from: "!1_MGB_2"}
+Object {x: 4655, y: 5092, vx: -700, vy: 0, from: "!1_MGB_0"}
+Object {x: 4795, y: 5092, vx: -700, vy: 0, from: "!1_MGB_1"}
+Object {x: 4935, y: 5092, vx: -700, vy: 0, from: "!1_MGB_2"}
+Object {x: 4620, y: 5092, vx: -700, vy: 0, from: "!1_MGB_0"}
+Object {x: 4760, y: 5092, vx: -700, vy: 0, from: "!1_MGB_1"}
+Object {x: 4900, y: 5092, vx: -700, vy: 0, from: "!1_MGB_2"}
+Object {x: 4585, y: 5092, vx: -700, vy: 0, from: "!1_MGB_0"}
+Object {x: 4725, y: 5092, vx: -700, vy: 0, from: "!1_MGB_1"}
+Object {x: 4865, y: 5092, vx: -700, vy: 0, from: "!1_MGB_2"}
+Object {x: 4538.33, y: 5092, vx: -700, vy: 0, from: "!1_MGB_0"}
+Object {x: 4678.33, y: 5092, vx: -700, vy: 0, from: "!1_MGB_1"}
+Object {x: 4818.33, y: 5092, vx: -700, vy: 0, from: "!1_MGB_2"}
+Object {x: 4503.33, y: 5092, vx: -700, vy: 0, from: "!1_MGB_0"}
+Object {x: 4643.33, y: 5092, vx: -700, vy: 0, from: "!1_MGB_1"}
+Object {x: 4783.33, y: 5092, vx: -700, vy: 0, from: "!1_MGB_2"}
+Object {x: 4468.33, y: 5092, vx: -700, vy: 0, from: "!1_MGB_0"}
+Object {x: 4608.33, y: 5092, vx: -700, vy: 0, from: "!1_MGB_1"}
+Object {x: 4748.33, y: 5092, vx: -700, vy: 0, from: "!1_MGB_2"}
+Object {x: 4433.33, y: 5092, vx: -700, vy: 0, from: "!1_MGB_0"}
+Object {x: 4573.33, y: 5092, vx: -700, vy: 0, from: "!1_MGB_1"}
+Object {x: 4713.33, y: 5092, vx: -700, vy: 0, from: "!1_MGB_2"}
+Object {x: 4410, y: 5092, vx: -700, vy: 0, from: "!1_MGB_0"}
+Object {x: 4550, y: 5092, vx: -700, vy: 0, from: "!1_MGB_1"}
+Object {x: 4690, y: 5092, vx: -700, vy: 0, from: "!1_MGB_2"}
+Object {x: 4375, y: 5092, vx: -700, vy: 0, from: "!1_MGB_0"}
+Object {x: 4515, y: 5092, vx: -700, vy: 0, from: "!1_MGB_1"}
+Object {x: 4655, y: 5092, vx: -700, vy: 0, from: "!1_MGB_2"}
+Object {ent0: "!1_MGB_0", ent1: "", impulse: 8750}
+Object {x: 4345.51, y: 5092, vx: 0, vy: 0, from: "!1_MGB_0"}
+Object {x: 4480, y: 5092, vx: -700, vy: 0, from: "!1_MGB_1"}
+Object {x: 4620, y: 5092, vx: -700, vy: 0, from: "!1_MGB_2"}
+Object {x: 4445, y: 5092, vx: -700, vy: 0, from: "!1_MGB_1"}
+Object {x: 4585, y: 5092, vx: -700, vy: 0, from: "!1_MGB_2"}
+Object {id: "!1_MGB_0"}
+Object {x: 4410, y: 5092, vx: -700, vy: 0, from: "!1_MGB_1"}
+Object {x: 4550, y: 5092, vx: -700, vy: 0, from: "!1_MGB_2"}
+Object {now: 1366055012788}
+Object {x: 4375, y: 5092, vx: -700, vy: 0, from: "!1_MGB_1"}
+Object {x: 4515, y: 5092, vx: -700, vy: 0, from: "!1_MGB_2"}
+Object {ent0: "!1_MGB_1", ent1: "", impulse: 8750}
+Object {x: 4345.51, y: 5092, vx: 0, vy: 0, from: "!1_MGB_1"}
+Object {x: 4480, y: 5092, vx: -700, vy: 0, from: "!1_MGB_2"}
+Object {x: 4445, y: 5092, vx: -700, vy: 0, from: "!1_MGB_2"}
+Object {id: "!1_MGB_1"}
+Object {x: 4410, y: 5092, vx: -700, vy: 0, from: "!1_MGB_2"}
+Object {x: 4375, y: 5092, vx: -700, vy: 0, from: "!1_MGB_2"}
+Object {ent0: "!1_MGB_2", ent1: "", impulse: 8750}
+Object {x: 4345.51, y: 5092, vx: 0, vy: 0, from: "!1_MGB_2"}
+Object {id: "!1_MGB_2"}
+Object {now: 1366055013789}
+Object {now: 1366055014788}
+Object {now: 1366055015788}
+Object {now: 1366055016788}
+Object {now: 1366055017788}
+Object {id: "!1_MGB_3", type: "SimpleProjectile", x: 4479, y: 4968, settings: "{"name":"!1_MGB_3","owner":"!1","faceAngleRadians"…:"./sound/bounce0.ogg","type":"SimpleProjectile"}"}
+Object {health: 100, energy: 92, walkSpeed: 260, powerUpTime: 0, numKills: 0…}
+Object {x: 4479.67, y: 4933.01, vx: 0, vy: -700, from: "!1_MGB_3"}
+Object {x: 4479.67, y: 4898.01, vx: 0, vy: -700, from: "!1_MGB_3"}
+Object {x: 4479.67, y: 4863.01, vx: 0, vy: -700, from: "!1_MGB_3"}
+Object {x: 4479.67, y: 4828.01, vx: 0, vy: -700, from: "!1_MGB_3"}
+Object {id: "!1_MGB_4", type: "SimpleProjectile", x: 4479, y: 4968, settings: "{"name":"!1_MGB_4","owner":"!1","faceAngleRadians"…:"./sound/bounce0.ogg","type":"SimpleProjectile"}"}
+Object {health: 100, energy: 90, walkSpeed: 260, powerUpTime: 0, numKills: 0…}
+Object {x: 4479.67, y: 4793.01, vx: 0, vy: -700, from: "!1_MGB_3"}
+Object {x: 4479.67, y: 4933.01, vx: 0, vy: -700, from: "!1_MGB_4"}
+Object {x: 4479.67, y: 4769.68, vx: 0, vy: -700, from: "!1_MGB_3"}
+Object {x: 4479.67, y: 4909.68, vx: 0, vy: -700, from: "!1_MGB_4"}
+Object {x: 4479.67, y: 4734.68, vx: 0, vy: -700, from: "!1_MGB_3"}
+Object {x: 4479.67, y: 4874.68, vx: 0, vy: -700, from: "!1_MGB_4"}
+Object {x: 4479.67, y: 4699.68, vx: 0, vy: -700, from: "!1_MGB_3"}
+Object {x: 4479.67, y: 4839.68, vx: 0, vy: -700, from: "!1_MGB_4"}
+Object {x: 4479.67, y: 4664.68, vx: 0, vy: -700, from: "!1_MGB_3"}
+Object {x: 4479.67, y: 4804.68, vx: 0, vy: -700, from: "!1_MGB_4"}
+Object {x: 4479.67, y: 4629.68, vx: 0, vy: -700, from: "!1_MGB_3"}
+Object {x: 4479.67, y: 4769.68, vx: 0, vy: -700, from: "!1_MGB_4"}
+Object {now: 1366055018788}
+Object {x: 4479.67, y: 4594.68, vx: 0, vy: -700, from: "!1_MGB_3"}
+Object {x: 4479.67, y: 4734.68, vx: 0, vy: -700, from: "!1_MGB_4"}
+Object {x: 4479.67, y: 4559.68, vx: 0, vy: -700, from: "!1_MGB_3"}
+Object {x: 4479.67, y: 4699.68, vx: 0, vy: -700, from: "!1_MGB_4"}
+Object {x: 4479.67, y: 4524.68, vx: 0, vy: -700, from: "!1_MGB_3"}
+Object {x: 4479.67, y: 4664.68, vx: 0, vy: -700, from: "!1_MGB_4"}
+Object {x: 4479.67, y: 4489.68, vx: 0, vy: -700, from: "!1_MGB_3"}
+Object {x: 4479.67, y: 4629.68, vx: 0, vy: -700, from: "!1_MGB_4"}
+Object {x: 4479.67, y: 4454.68, vx: 0, vy: -700, from: "!1_MGB_3"}
+Object {x: 4479.67, y: 4594.68, vx: 0, vy: -700, from: "!1_MGB_4"}
+Object {x: 4479.67, y: 4419.68, vx: 0, vy: -700, from: "!1_MGB_3"}
+Object {x: 4479.67, y: 4559.68, vx: 0, vy: -700, from: "!1_MGB_4"}
+Object {x: 4479.67, y: 4384.68, vx: 0, vy: -700, from: "!1_MGB_3"}
+Object {x: 4479.67, y: 4524.68, vx: 0, vy: -700, from: "!1_MGB_4"}
+Object {x: 4479.67, y: 4349.68, vx: 0, vy: -700, from: "!1_MGB_3"}
+Object {x: 4479.67, y: 4489.68, vx: 0, vy: -700, from: "!1_MGB_4"}
+Object {x: 4479.67, y: 4314.68, vx: 0, vy: -700, from: "!1_MGB_3"}
+Object {x: 4479.67, y: 4454.68, vx: 0, vy: -700, from: "!1_MGB_4"}
+Object {id: "!1_MGB_5", type: "SimpleProjectile", x: 4465, y: 4830, settings: "{"name":"!1_MGB_5","owner":"!1","faceAngleRadians"…:"./sound/bounce0.ogg","type":"SimpleProjectile"}"}
+Object {health: 100, energy: 88, walkSpeed: 260, powerUpTime: 0, numKills: 0…}
+Object {x: 4479.67, y: 4279.68, vx: 0, vy: -700, from: "!1_MGB_3"}
+Object {x: 4479.67, y: 4419.68, vx: 0, vy: -700, from: "!1_MGB_4"}
+Object {x: 4440.78, y: 4806.12, vx: -494.97, vy: -494.97, from: "!1_MGB_5"}
+Object {now: 1366055019788}
+Object {x: 4479.67, y: 4268.01, vx: 0, vy: -700, from: "!1_MGB_3"}
+Object {x: 4479.67, y: 4408.01, vx: 0, vy: -700, from: "!1_MGB_4"}
+Object {x: 4432.53, y: 4797.87, vx: -494.97, vy: -494.97, from: "!1_MGB_5"}
+Object {x: 4479.67, y: 4233.01, vx: 0, vy: -700, from: "!1_MGB_3"}
+Object {x: 4479.67, y: 4373.01, vx: 0, vy: -700, from: "!1_MGB_4"}
+Object {x: 4407.78, y: 4773.12, vx: -494.97, vy: -494.97, from: "!1_MGB_5"}
+Object {x: 4479.67, y: 4198.01, vx: 0, vy: -700, from: "!1_MGB_3"}
+Object {x: 4479.67, y: 4338.01, vx: 0, vy: -700, from: "!1_MGB_4"}
+Object {x: 4383.03, y: 4748.37, vx: -494.97, vy: -494.97, from: "!1_MGB_5"}
+Object {id: "!1_MGB_6", type: "SimpleProjectile", x: 4465, y: 4791, settings: "{"name":"!1_MGB_6","owner":"!1","faceAngleRadians"…:"./sound/bounce0.ogg","type":"SimpleProjectile"}"}
+Object {health: 100, energy: 86, walkSpeed: 260, powerUpTime: 0, numKills: 0…}
+Object {x: 4479.67, y: 4163.01, vx: 0, vy: -700, from: "!1_MGB_3"}
+Object {x: 4479.67, y: 4303.01, vx: 0, vy: -700, from: "!1_MGB_4"}
+Object {x: 4358.28, y: 4723.62, vx: -494.97, vy: -494.97, from: "!1_MGB_5"}
+Object {x: 4440.78, y: 4767.12, vx: -494.97, vy: -494.97, from: "!1_MGB_6"}
+Object {ent0: "!1_MGB_5", ent1: "", impulse: 6187.18}
+Object {x: 4479.67, y: 4128.01, vx: 0, vy: -700, from: "!1_MGB_3"}
+Object {x: 4479.67, y: 4268.01, vx: 0, vy: -700, from: "!1_MGB_4"}
+Object {x: 4337.51, y: 4698.87, vx: 0, vy: -494.97, from: "!1_MGB_5"}
+Object {x: 4416.03, y: 4742.37, vx: -494.97, vy: -494.97, from: "!1_MGB_6"}
+Object {id: "!1_MGB_5"}
+Object {x: 4479.67, y: 4093.01, vx: 0, vy: -700, from: "!1_MGB_3"}
+Object {x: 4479.67, y: 4233.01, vx: 0, vy: -700, from: "!1_MGB_4"}
+Object {x: 4391.28, y: 4717.62, vx: -494.97, vy: -494.97, from: "!1_MGB_6"}
+Object {x: 4479.67, y: 4058.01, vx: 0, vy: -700, from: "!1_MGB_3"}
+Object {x: 4479.67, y: 4198.01, vx: 0, vy: -700, from: "!1_MGB_4"}
+Object {x: 4366.53, y: 4692.87, vx: -494.97, vy: -494.97, from: "!1_MGB_6"}
+Object {id: "!1_MGB_7", type: "SimpleProjectile", x: 4465, y: 4791, settings: "{"name":"!1_MGB_7","owner":"!1","faceAngleRadians"…:"./sound/bounce0.ogg","type":"SimpleProjectile"}"}
+Object {health: 100, energy: 84, walkSpeed: 260, powerUpTime: 0, numKills: 0…}
+Object {x: 4479.67, y: 4023.01, vx: 0, vy: -700, from: "!1_MGB_3"}
+Object {x: 4479.67, y: 4163.01, vx: 0, vy: -700, from: "!1_MGB_4"}
+Object {x: 4341.78, y: 4668.12, vx: -494.97, vy: -494.97, from: "!1_MGB_6"}
+Object {x: 4440.78, y: 4767.12, vx: -494.97, vy: -494.97, from: "!1_MGB_7"}
+Object {ent0: "!1_MGB_6", ent1: "", impulse: 6187.18}
+Object {x: 4479.67, y: 3988.01, vx: 0, vy: -700, from: "!1_MGB_3"}
+Object {x: 4479.67, y: 4128.01, vx: 0, vy: -700, from: "!1_MGB_4"}
+Object {x: 4337.51, y: 4643.38, vx: 0, vy: -494.97, from: "!1_MGB_6"}
+Object {x: 4416.03, y: 4742.37, vx: -494.97, vy: -494.97, from: "!1_MGB_7"}
+Object {id: "!1_MGB_6"}
+Object {x: 4479.67, y: 3953.01, vx: 0, vy: -700, from: "!1_MGB_3"}
+Object {x: 4479.67, y: 4093.01, vx: 0, vy: -700, from: "!1_MGB_4"}
+Object {x: 4391.28, y: 4717.62, vx: -494.97, vy: -494.97, from: "!1_MGB_7"}
+Object {now: 1366055020789}
+Object {x: 4479.67, y: 3918.01, vx: 0, vy: -700, from: "!1_MGB_3"}
+Object {x: 4479.67, y: 4058.01, vx: 0, vy: -700, from: "!1_MGB_4"}
+Object {x: 4366.53, y: 4692.87, vx: -494.97, vy: -494.97, from: "!1_MGB_7"}
+Object {x: 4479.67, y: 3883.01, vx: 0, vy: -700, from: "!1_MGB_3"}
+Object {x: 4479.67, y: 4023.01, vx: 0, vy: -700, from: "!1_MGB_4"}
+Object {x: 4341.78, y: 4668.12, vx: -494.97, vy: -494.97, from: "!1_MGB_7"}
+Object {ent0: "!1_MGB_7", ent1: "", impulse: 6187.18}
+Object {x: 4479.67, y: 3848.01, vx: 0, vy: -700, from: "!1_MGB_3"}
+Object {x: 4479.67, y: 3988.01, vx: 0, vy: -700, from: "!1_MGB_4"}
+Object {x: 4337.51, y: 4643.38, vx: 0, vy: -494.97, from: "!1_MGB_7"}
+Object {id: "!1_MGB_7"}
+Object {x: 4479.67, y: 3813.01, vx: 0, vy: -700, from: "!1_MGB_3"}
+Object {x: 4479.67, y: 3953.01, vx: 0, vy: -700, from: "!1_MGB_4"}
+Object {x: 4479.67, y: 3778.01, vx: 0, vy: -700, from: "!1_MGB_3"}
+Object {x: 4479.67, y: 3918.01, vx: 0, vy: -700, from: "!1_MGB_4"}
+Object {ent0: "!1_MGB_3", ent1: "", impulse: 8149.57}
+Object {ent0: "!1_MGB_3", ent1: "", impulse: 9067.99}
+Object {ent0: "!1_MGB_3", ent1: "", impulse: 125.63}
+Object {x: 4477.43, y: 3760.46, vx: -88.41, vy: -11.05, from: "!1_MGB_3"}
+Object {x: 4479.67, y: 3883.01, vx: 0, vy: -700, from: "!1_MGB_4"}
+Object {ent0: "!1_MGB_3", ent1: "", impulse: 1688.85}
+Object {ent0: "!1_MGB_3", ent1: "", impulse: 295.13}
+Object {ent0: "!1_MGB_3", ent1: "", impulse: 553.99}
+Object {ent0: "!1_MGB_3", ent1: "", impulse: 18.06}
+Object {ent0: "!1_MGB_3", ent1: "", impulse: 33.68}
+Object {ent0: "!1_MGB_3", ent1: "", impulse: 272.17}
+Object {x: 4476.82, y: 3760.83, vx: -9.77, vy: 17.3, from: "!1_MGB_3"}
+Object {x: 4479.67, y: 3848.01, vx: 0, vy: -700, from: "!1_MGB_4"}
+Object {id: "!1_MGB_3"}
+Object {x: 4479.67, y: 3813.01, vx: 0, vy: -700, from: "!1_MGB_4"}
+Object {x: 4479.67, y: 3778.01, vx: 0, vy: -700, from: "!1_MGB_4"}
+Object {ent0: "!1_MGB_4", ent1: "", impulse: 8149.57}
+Object {ent0: "!1_MGB_4", ent1: "", impulse: 9067.99}
+Object {ent0: "!1_MGB_4", ent1: "", impulse: 125.63}
+Object {x: 4477.43, y: 3760.46, vx: -88.41, vy: -11.05, from: "!1_MGB_4"}
+Object {ent0: "!1_MGB_4", ent1: "", impulse: 1688.85}
+Object {ent0: "!1_MGB_4", ent1: "", impulse: 295.13}
+Object {ent0: "!1_MGB_4", ent1: "", impulse: 553.99}
+Object {ent0: "!1_MGB_4", ent1: "", impulse: 18.06}
+Object {ent0: "!1_MGB_4", ent1: "", impulse: 33.68}
+Object {ent0: "!1_MGB_4", ent1: "", impulse: 272.17}
+Object {x: 4476.82, y: 3760.83, vx: -9.77, vy: 17.3, from: "!1_MGB_4"}
+Object {id: "!1_MGB_4"}
+Object {now: 1366055021788}
+Object {id: "!1_MGB_8", type: "SimpleProjectile", x: 4479, y: 4708, settings: "{"name":"!1_MGB_8","owner":"!1","faceAngleRadians"…:"./sound/bounce0.ogg","type":"SimpleProjectile"}"}
+Object {health: 100, energy: 82, walkSpeed: 260, powerUpTime: 0, numKills: 0…}
+Object {x: 4479.67, y: 4673.01, vx: 0, vy: -700, from: "!1_MGB_8"}
+Object {x: 4479.67, y: 4649.68, vx: 0, vy: -700, from: "!1_MGB_8"}
+Object {x: 4479.67, y: 4614.68, vx: 0, vy: -700, from: "!1_MGB_8"}
+Object {x: 4479.67, y: 4591.34, vx: 0, vy: -700, from: "!1_MGB_8"}
+Object {id: "!1_MGB_9", type: "SimpleProjectile", x: 4479, y: 4664, settings: "{"name":"!1_MGB_9","owner":"!1","faceAngleRadians"…:"./sound/bounce0.ogg","type":"SimpleProjectile"}"}
+Object {health: 100, energy: 80, walkSpeed: 260, powerUpTime: 0, numKills: 0…}
+Object {x: 4479.67, y: 4556.34, vx: 0, vy: -700, from: "!1_MGB_8"}
+Object {x: 4479.67, y: 4629.67, vx: 0, vy: -700, from: "!1_MGB_9"}
+Object {x: 4479.67, y: 4521.34, vx: 0, vy: -700, from: "!1_MGB_8"}
+Object {x: 4479.67, y: 4594.67, vx: 0, vy: -700, from: "!1_MGB_9"}
+Object {x: 4479.67, y: 4486.34, vx: 0, vy: -700, from: "!1_MGB_8"}
+Object {x: 4479.67, y: 4559.67, vx: 0, vy: -700, from: "!1_MGB_9"}
+Object {x: 4479.67, y: 4451.34, vx: 0, vy: -700, from: "!1_MGB_8"}
+Object {x: 4479.67, y: 4524.67, vx: 0, vy: -700, from: "!1_MGB_9"}
+Object {id: "!1_MGB_10", type: "SimpleProjectile", x: 4479, y: 4604, settings: "{"name":"!1_MGB_10","owner":"!1","faceAngleRadians…:"./sound/bounce0.ogg","type":"SimpleProjectile"}"}
+Object {health: 100, energy: 78, walkSpeed: 260, powerUpTime: 0, numKills: 0…}
+Object {x: 4479.67, y: 4416.34, vx: 0, vy: -700, from: "!1_MGB_8"}
+Object {x: 4479.67, y: 4489.67, vx: 0, vy: -700, from: "!1_MGB_9"}
+Object {x: 4479.67, y: 4569.01, vx: 0, vy: -700, from: "!1_MGB_10"}
+Object {x: 4479.67, y: 4381.34, vx: 0, vy: -700, from: "!1_MGB_8"}
+Object {x: 4479.67, y: 4454.67, vx: 0, vy: -700, from: "!1_MGB_9"}
+Object {x: 4479.67, y: 4534.01, vx: 0, vy: -700, from: "!1_MGB_10"}
+Object {x: 4479.67, y: 4358.01, vx: 0, vy: -700, from: "!1_MGB_8"}
+Object {x: 4479.67, y: 4431.34, vx: 0, vy: -700, from: "!1_MGB_9"}
+Object {x: 4479.67, y: 4510.68, vx: 0, vy: -700, from: "!1_MGB_10"}
+Object {x: 4479.67, y: 4323.01, vx: 0, vy: -700, from: "!1_MGB_8"}
+Object {x: 4479.67, y: 4396.34, vx: 0, vy: -700, from: "!1_MGB_9"}
+Object {x: 4479.67, y: 4475.68, vx: 0, vy: -700, from: "!1_MGB_10"}
+Object {x: 4479.67, y: 4288.01, vx: 0, vy: -700, from: "!1_MGB_8"}
+Object {x: 4479.67, y: 4361.34, vx: 0, vy: -700, from: "!1_MGB_9"}
+Object {x: 4479.67, y: 4440.68, vx: 0, vy: -700, from: "!1_MGB_10"}
+Object {id: "!1_MGB_11", type: "SimpleProjectile", x: 4479, y: 4543, settings: "{"name":"!1_MGB_11","owner":"!1","faceAngleRadians…:"./sound/bounce0.ogg","type":"SimpleProjectile"}"}
+Object {health: 100, energy: 76, walkSpeed: 260, powerUpTime: 0, numKills: 0…}
+Object {x: 4479.67, y: 4253.01, vx: 0, vy: -700, from: "!1_MGB_8"}
+Object {x: 4479.67, y: 4326.34, vx: 0, vy: -700, from: "!1_MGB_9"}
+Object {x: 4479.67, y: 4405.68, vx: 0, vy: -700, from: "!1_MGB_10"}
+Object {x: 4479.67, y: 4508.34, vx: 0, vy: -700, from: "!1_MGB_11"}
+Object {x: 4479.67, y: 4218.01, vx: 0, vy: -700, from: "!1_MGB_8"}
+Object {x: 4479.67, y: 4291.34, vx: 0, vy: -700, from: "!1_MGB_9"}
+Object {x: 4479.67, y: 4370.68, vx: 0, vy: -700, from: "!1_MGB_10"}
+Object {x: 4479.67, y: 4473.34, vx: 0, vy: -700, from: "!1_MGB_11"}
+Object {x: 4479.67, y: 4183.01, vx: 0, vy: -700, from: "!1_MGB_8"}
+Object {x: 4479.67, y: 4256.34, vx: 0, vy: -700, from: "!1_MGB_9"}
+Object {x: 4479.67, y: 4335.68, vx: 0, vy: -700, from: "!1_MGB_10"}
+Object {x: 4479.67, y: 4438.34, vx: 0, vy: -700, from: "!1_MGB_11"}
+Object {x: 4479.67, y: 4148.01, vx: 0, vy: -700, from: "!1_MGB_8"}
+Object {x: 4479.67, y: 4221.34, vx: 0, vy: -700, from: "!1_MGB_9"}
+Object {x: 4479.67, y: 4300.68, vx: 0, vy: -700, from: "!1_MGB_10"}
+Object {x: 4479.67, y: 4403.34, vx: 0, vy: -700, from: "!1_MGB_11"}
+Object {x: 4479.67, y: 4113.01, vx: 0, vy: -700, from: "!1_MGB_8"}
+Object {x: 4479.67, y: 4186.34, vx: 0, vy: -700, from: "!1_MGB_9"}
+Object {x: 4479.67, y: 4265.68, vx: 0, vy: -700, from: "!1_MGB_10"}
+Object {x: 4479.67, y: 4368.34, vx: 0, vy: -700, from: "!1_MGB_11"}
+Object {x: 4479.67, y: 4089.68, vx: 0, vy: -700, from: "!1_MGB_8"}
+Object {x: 4479.67, y: 4163.01, vx: 0, vy: -700, from: "!1_MGB_9"}
+Object {x: 4479.67, y: 4242.34, vx: 0, vy: -700, from: "!1_MGB_10"}
+Object {x: 4479.67, y: 4345.01, vx: 0, vy: -700, from: "!1_MGB_11"}
+Object {x: 4479.67, y: 4054.68, vx: 0, vy: -700, from: "!1_MGB_8"}
+Object {x: 4479.67, y: 4128.01, vx: 0, vy: -700, from: "!1_MGB_9"}
+Object {x: 4479.67, y: 4207.34, vx: 0, vy: -700, from: "!1_MGB_10"}
+Object {x: 4479.67, y: 4310.01, vx: 0, vy: -700, from: "!1_MGB_11"}
+Object {now: 1366055022788}
+Object {x: 4479.67, y: 4019.68, vx: 0, vy: -700, from: "!1_MGB_8"}
+Object {x: 4479.67, y: 4093.01, vx: 0, vy: -700, from: "!1_MGB_9"}
+Object {x: 4479.67, y: 4172.34, vx: 0, vy: -700, from: "!1_MGB_10"}
+Object {x: 4479.67, y: 4275.01, vx: 0, vy: -700, from: "!1_MGB_11"}
+Object {x: 4479.67, y: 3996.34, vx: 0, vy: -700, from: "!1_MGB_8"}
+Object {x: 4479.67, y: 4069.67, vx: 0, vy: -700, from: "!1_MGB_9"}
+Object {x: 4479.67, y: 4149.01, vx: 0, vy: -700, from: "!1_MGB_10"}
+Object {x: 4479.67, y: 4251.67, vx: 0, vy: -700, from: "!1_MGB_11"}
+Object {x: 4479.67, y: 3961.34, vx: 0, vy: -700, from: "!1_MGB_8"}
+Object {x: 4479.67, y: 4034.67, vx: 0, vy: -700, from: "!1_MGB_9"}
+Object {x: 4479.67, y: 4114.01, vx: 0, vy: -700, from: "!1_MGB_10"}
+Object {x: 4479.67, y: 4216.67, vx: 0, vy: -700, from: "!1_MGB_11"}
+Object {x: 4479.67, y: 3926.34, vx: 0, vy: -700, from: "!1_MGB_8"}
+Object {x: 4479.67, y: 3999.67, vx: 0, vy: -700, from: "!1_MGB_9"}
+Object {x: 4479.67, y: 4079.01, vx: 0, vy: -700, from: "!1_MGB_10"}
+Object {x: 4479.67, y: 4181.67, vx: 0, vy: -700, from: "!1_MGB_11"}
+Object {x: 4479.67, y: 3891.34, vx: 0, vy: -700, from: "!1_MGB_8"}
+Object {x: 4479.67, y: 3964.67, vx: 0, vy: -700, from: "!1_MGB_9"}
+Object {x: 4479.67, y: 4044.01, vx: 0, vy: -700, from: "!1_MGB_10"}
+Object {x: 4479.67, y: 4146.67, vx: 0, vy: -700, from: "!1_MGB_11"}
+Object {x: 4479.67, y: 3856.34, vx: 0, vy: -700, from: "!1_MGB_8"}
+Object {x: 4479.67, y: 3929.67, vx: 0, vy: -700, from: "!1_MGB_9"}
+Object {x: 4479.67, y: 4009.01, vx: 0, vy: -700, from: "!1_MGB_10"}
+Object {x: 4479.67, y: 4111.67, vx: 0, vy: -700, from: "!1_MGB_11"}
+Object {x: 4479.67, y: 3833.01, vx: 0, vy: -700, from: "!1_MGB_8"}
+Object {x: 4479.67, y: 3906.34, vx: 0, vy: -700, from: "!1_MGB_9"}
+Object {x: 4479.67, y: 3985.68, vx: 0, vy: -700, from: "!1_MGB_10"}
+Object {x: 4479.67, y: 4088.34, vx: 0, vy: -700, from: "!1_MGB_11"}
+Object {x: 4479.67, y: 3798.01, vx: 0, vy: -700, from: "!1_MGB_8"}
+Object {x: 4479.67, y: 3871.34, vx: 0, vy: -700, from: "!1_MGB_9"}
+Object {x: 4479.67, y: 3950.68, vx: 0, vy: -700, from: "!1_MGB_10"}
+Object {x: 4479.67, y: 4053.34, vx: 0, vy: -700, from: "!1_MGB_11"}
+Object {id: "!1_MGB_12", type: "SimpleProjectile", x: 4465, y: 4349, settings: "{"name":"!1_MGB_12","owner":"!1","faceAngleRadians…:"./sound/bounce0.ogg","type":"SimpleProjectile"}"}
+Object {health: 100, energy: 74, walkSpeed: 260, powerUpTime: 0, numKills: 0…}
+Object {x: 4479.67, y: 3763.01, vx: 0, vy: -700, from: "!1_MGB_8"}
+Object {x: 4479.67, y: 3836.34, vx: 0, vy: -700, from: "!1_MGB_9"}
+Object {x: 4479.67, y: 3915.68, vx: 0, vy: -700, from: "!1_MGB_10"}
+Object {x: 4479.67, y: 4018.34, vx: 0, vy: -700, from: "!1_MGB_11"}
+Object {x: 4440.78, y: 4325.12, vx: -494.97, vy: -494.97, from: "!1_MGB_12"}
+Object {ent0: "!1_MGB_8", ent1: "", impulse: 8149.57}
+Object {ent0: "!1_MGB_8", ent1: "", impulse: 1404.74}
+Object {ent0: "!1_MGB_8", ent1: "", impulse: 2409.39}
+Object {ent0: "!1_MGB_8", ent1: "", impulse: 4107.98}
+Object {ent0: "!1_MGB_8", ent1: "", impulse: 2550.29}
+Object {ent0: "!1_MGB_8", ent1: "", impulse: 540.05}
+Object {ent0: "!1_MGB_8", ent1: "", impulse: 2472.32}
+Object {ent0: "!1_MGB_8", ent1: "", impulse: 3988.9}
+Object {ent0: "!1_MGB_8", ent1: "", impulse: 2476.46}
+Object {x: 4476.25, y: 3746.02, vx: -3.54, vy: -317.41, from: "!1_MGB_8"}
+Object {x: 4479.67, y: 3801.34, vx: 0, vy: -700, from: "!1_MGB_9"}
+Object {x: 4479.67, y: 3880.68, vx: 0, vy: -700, from: "!1_MGB_10"}
+Object {x: 4479.67, y: 3983.34, vx: 0, vy: -700, from: "!1_MGB_11"}
+Object {x: 4416.03, y: 4300.37, vx: -494.97, vy: -494.97, from: "!1_MGB_12"}
+Object {id: "!1_MGB_8"}
+Object {x: 4479.67, y: 3766.34, vx: 0, vy: -700, from: "!1_MGB_9"}
+Object {x: 4479.67, y: 3845.68, vx: 0, vy: -700, from: "!1_MGB_10"}
+Object {x: 4479.67, y: 3948.34, vx: 0, vy: -700, from: "!1_MGB_11"}
+Object {x: 4391.28, y: 4275.62, vx: -494.97, vy: -494.97, from: "!1_MGB_12"}
+Object {ent0: "!1_MGB_9", ent1: "", impulse: 8149.57}
+Object {ent0: "!1_MGB_9", ent1: "", impulse: 9067.99}
+Object {ent0: "!1_MGB_9", ent1: "", impulse: 125.63}
+Object {ent0: "!1_MGB_9", ent1: "", impulse: 1688.83}
+Object {x: 4477.1, y: 3760.44, vx: -21.35, vy: -2.93, from: "!1_MGB_9"}
+Object {x: 4479.67, y: 3810.68, vx: 0, vy: -700, from: "!1_MGB_10"}
+Object {x: 4479.67, y: 3913.34, vx: 0, vy: -700, from: "!1_MGB_11"}
+Object {x: 4366.53, y: 4250.87, vx: -494.97, vy: -494.97, from: "!1_MGB_12"}
+Object {id: "!1_MGB_9"}
+Object {id: "!1_MGB_13", type: "SimpleProjectile", x: 4465, y: 4293, settings: "{"name":"!1_MGB_13","owner":"!1","faceAngleRadians…:"./sound/bounce0.ogg","type":"SimpleProjectile"}"}
+Object {health: 100, energy: 72, walkSpeed: 260, powerUpTime: 0, numKills: 0…}
+Object {x: 4479.67, y: 3775.68, vx: 0, vy: -700, from: "!1_MGB_10"}
+Object {x: 4479.67, y: 3878.34, vx: 0, vy: -700, from: "!1_MGB_11"}
+Object {x: 4341.78, y: 4226.12, vx: -494.97, vy: -494.97, from: "!1_MGB_12"}
+Object {x: 4440.78, y: 4268.78, vx: -494.97, vy: -494.97, from: "!1_MGB_13"}
+Object {ent0: "!1_MGB_10", ent1: "", impulse: 8149.57}
+Object {ent0: "!1_MGB_10", ent1: "", impulse: 1062.57}
+Object {ent0: "!1_MGB_10", ent1: "", impulse: 2760.92}
+Object {ent0: "!1_MGB_10", ent1: "", impulse: 4588.03}
+Object {ent0: "!1_MGB_10", ent1: "", impulse: 3058.65}
+Object {ent0: "!1_MGB_10", ent1: "", impulse: 594.41}
+Object {ent0: "!1_MGB_10", ent1: "", impulse: 2820.77}
+Object {x: 4476.4, y: 3751.36, vx: -3.71, vy: -332.52, from: "!1_MGB_10"}
+Object {x: 4479.67, y: 3843.34, vx: 0, vy: -700, from: "!1_MGB_11"}
+Object {x: 4317.04, y: 4201.38, vx: -494.97, vy: -494.97, from: "!1_MGB_12"}
+Object {x: 4416.03, y: 4244.03, vx: -494.97, vy: -494.97, from: "!1_MGB_13"}
+Object {id: "!1_MGB_10"}
+Object {x: 4479.67, y: 3820.01, vx: 0, vy: -700, from: "!1_MGB_11"}
+Object {x: 4300.54, y: 4184.88, vx: -494.97, vy: -494.97, from: "!1_MGB_12"}
+Object {x: 4399.53, y: 4227.53, vx: -494.97, vy: -494.97, from: "!1_MGB_13"}
+Object {x: 4479.67, y: 3785.01, vx: 0, vy: -700, from: "!1_MGB_11"}
+Object {x: 4275.79, y: 4160.13, vx: -494.97, vy: -494.97, from: "!1_MGB_12"}
+Object {x: 4374.78, y: 4202.78, vx: -494.97, vy: -494.97, from: "!1_MGB_13"}
+Object {id: "!1_MGB_14", type: "SimpleProjectile", x: 4459, y: 4307, settings: "{"name":"!1_MGB_14","owner":"!1","faceAngleRadians…:"./sound/bounce0.ogg","type":"SimpleProjectile"}"}
+Object {ent0: "!1_MGB_11", ent1: "", impulse: 8149.57}
+Object {ent0: "!1_MGB_11", ent1: "", impulse: 1753.27}
+Object {health: 100, energy: 70, walkSpeed: 260, powerUpTime: 0, numKills: 0…}
+Object {x: 4478.9, y: 3756.19, vx: -49.13, vy: -306.94, from: "!1_MGB_11"}
+Object {x: 4251.04, y: 4135.38, vx: -494.97, vy: -494.97, from: "!1_MGB_12"}
+Object {x: 4350.03, y: 4178.03, vx: -494.97, vy: -494.97, from: "!1_MGB_13"}
+Object {x: 4424.67, y: 4307.67, vx: -700, vy: 0, from: "!1_MGB_14"}
+Object {ent0: "!1_MGB_11", ent1: "", impulse: 2043.47}
+Object {ent0: "!1_MGB_11", ent1: "", impulse: 3631.89}
+Object {ent0: "!1_MGB_11", ent1: "", impulse: 2066.26}
+Object {ent0: "!1_MGB_11", ent1: "", impulse: 485.77}
+Object {ent0: "!1_MGB_11", ent1: "", impulse: 2114.01}
+Object {ent0: "!1_MGB_11", ent1: "", impulse: 248.23}
+Object {ent0: "!1_MGB_11", ent1: "", impulse: 2142.46}
+Object {ent0: "!1_MGB_11", ent1: "", impulse: 3133.21}
+Object {ent0: "!1_MGB_11", ent1: "", impulse: 2691.76}
+Object {x: 4476.34, y: 3741.06, vx: -3.37, vy: -301.99, from: "!1_MGB_11"}
+Object {x: 4226.29, y: 4110.63, vx: -494.97, vy: -494.97, from: "!1_MGB_12"}
+Object {x: 4325.29, y: 4153.29, vx: -494.97, vy: -494.97, from: "!1_MGB_13"}
+Object {x: 4389.67, y: 4307.67, vx: -700, vy: 0, from: "!1_MGB_14"}
+Object {id: "!1_MGB_11"}
+Object {x: 4201.54, y: 4085.88, vx: -494.97, vy: -494.97, from: "!1_MGB_12"}
+Object {x: 4300.54, y: 4128.54, vx: -494.97, vy: -494.97, from: "!1_MGB_13"}
+Object {x: 4354.67, y: 4307.67, vx: -700, vy: 0, from: "!1_MGB_14"}
+Object {x: 4176.79, y: 4061.13, vx: -494.97, vy: -494.97, from: "!1_MGB_12"}
+Object {x: 4275.79, y: 4103.79, vx: -494.97, vy: -494.97, from: "!1_MGB_13"}
+Object {x: 4319.67, y: 4307.67, vx: -700, vy: 0, from: "!1_MGB_14"}
+Object {now: 1366055023788}
+Object {x: 4152.04, y: 4036.38, vx: -494.97, vy: -494.97, from: "!1_MGB_12"}
+Object {x: 4251.04, y: 4079.04, vx: -494.97, vy: -494.97, from: "!1_MGB_13"}
+Object {x: 4284.67, y: 4307.67, vx: -700, vy: 0, from: "!1_MGB_14"}
+Object {x: 4135.54, y: 4019.88, vx: -494.97, vy: -494.97, from: "!1_MGB_12"}
+Object {x: 4234.54, y: 4062.54, vx: -494.97, vy: -494.97, from: "!1_MGB_13"}
+Object {x: 4261.34, y: 4307.67, vx: -700, vy: 0, from: "!1_MGB_14"}
+Object {x: 4110.8, y: 3995.14, vx: -494.97, vy: -494.97, from: "!1_MGB_12"}
+Object {x: 4209.79, y: 4037.79, vx: -494.97, vy: -494.97, from: "!1_MGB_13"}
+Object {x: 4226.34, y: 4307.67, vx: -700, vy: 0, from: "!1_MGB_14"}
+Object {x: 4086.05, y: 3970.39, vx: -494.97, vy: -494.97, from: "!1_MGB_12"}
+Object {x: 4185.04, y: 4013.04, vx: -494.97, vy: -494.97, from: "!1_MGB_13"}
+Object {x: 4191.34, y: 4307.67, vx: -700, vy: 0, from: "!1_MGB_14"}
+Object {x: 4061.3, y: 3945.64, vx: -494.97, vy: -494.97, from: "!1_MGB_12"}
+Object {x: 4160.29, y: 3988.29, vx: -494.97, vy: -494.97, from: "!1_MGB_13"}
+Object {x: 4156.34, y: 4307.67, vx: -700, vy: 0, from: "!1_MGB_14"}
+Object {x: 4036.55, y: 3920.89, vx: -494.97, vy: -494.97, from: "!1_MGB_12"}
+Object {x: 4135.54, y: 3963.54, vx: -494.97, vy: -494.97, from: "!1_MGB_13"}
+Object {x: 4121.34, y: 4307.67, vx: -700, vy: 0, from: "!1_MGB_14"}
+Object {x: 4011.8, y: 3896.14, vx: -494.97, vy: -494.97, from: "!1_MGB_12"}
+Object {x: 4110.8, y: 3938.8, vx: -494.97, vy: -494.97, from: "!1_MGB_13"}
+Object {x: 4086.34, y: 4307.67, vx: -700, vy: 0, from: "!1_MGB_14"}
+Object {x: 3987.05, y: 3871.39, vx: -494.97, vy: -494.97, from: "!1_MGB_12"}
+Object {x: 4086.05, y: 3914.05, vx: -494.97, vy: -494.97, from: "!1_MGB_13"}
+Object {x: 4051.34, y: 4307.67, vx: -700, vy: 0, from: "!1_MGB_14"}
+Object {x: 3962.3, y: 3846.64, vx: -494.97, vy: -494.97, from: "!1_MGB_12"}
+Object {x: 4061.3, y: 3889.3, vx: -494.97, vy: -494.97, from: "!1_MGB_13"}
+Object {x: 4016.34, y: 4307.67, vx: -700, vy: 0, from: "!1_MGB_14"}
+Object {x: 3937.55, y: 3821.89, vx: -494.97, vy: -494.97, from: "!1_MGB_12"}
+Object {x: 4036.55, y: 3864.55, vx: -494.97, vy: -494.97, from: "!1_MGB_13"}
+Object {x: 3981.34, y: 4307.67, vx: -700, vy: 0, from: "!1_MGB_14"}
+Object {x: 3912.81, y: 3797.15, vx: -494.97, vy: -494.97, from: "!1_MGB_12"}
+Object {x: 4011.8, y: 3839.8, vx: -494.97, vy: -494.97, from: "!1_MGB_13"}
+Object {x: 3946.34, y: 4307.67, vx: -700, vy: 0, from: "!1_MGB_14"}
+Object {x: 3888.06, y: 3772.4, vx: -494.97, vy: -494.97, from: "!1_MGB_12"}
+Object {x: 3987.05, y: 3815.05, vx: -494.97, vy: -494.97, from: "!1_MGB_13"}
+Object {x: 3911.34, y: 4307.67, vx: -700, vy: 0, from: "!1_MGB_14"}
+Object {x: 3863.31, y: 3747.65, vx: -494.97, vy: -494.97, from: "!1_MGB_12"}
+Object {x: 3962.3, y: 3790.3, vx: -494.97, vy: -494.97, from: "!1_MGB_13"}
+Object {x: 3876.34, y: 4307.67, vx: -700, vy: 0, from: "!1_MGB_14"}
+Object {x: 3838.56, y: 3722.9, vx: -494.97, vy: -494.97, from: "!1_MGB_12"}
+Object {x: 3937.55, y: 3765.55, vx: -494.97, vy: -494.97, from: "!1_MGB_13"}
+Object {x: 3841.34, y: 4307.67, vx: -700, vy: 0, from: "!1_MGB_14"}
+Object {x: 3813.81, y: 3698.15, vx: -494.97, vy: -494.97, from: "!1_MGB_12"}
+Object {x: 3912.81, y: 3740.81, vx: -494.97, vy: -494.97, from: "!1_MGB_13"}
+Object {x: 3806.34, y: 4307.67, vx: -700, vy: 0, from: "!1_MGB_14"}
+Object {x: 3789.06, y: 3673.4, vx: -494.97, vy: -494.97, from: "!1_MGB_12"}
+Object {x: 3888.06, y: 3716.06, vx: -494.97, vy: -494.97, from: "!1_MGB_13"}
+Object {x: 3771.34, y: 4307.67, vx: -700, vy: 0, from: "!1_MGB_14"}
+Object {x: 3764.31, y: 3648.65, vx: -494.97, vy: -494.97, from: "!1_MGB_12"}
+Object {x: 3863.31, y: 3691.31, vx: -494.97, vy: -494.97, from: "!1_MGB_13"}
+Object {x: 3736.34, y: 4307.67, vx: -700, vy: 0, from: "!1_MGB_14"}
+Object {x: 3739.56, y: 3623.9, vx: -494.97, vy: -494.97, from: "!1_MGB_12"}
+Object {x: 3838.56, y: 3666.56, vx: -494.97, vy: -494.97, from: "!1_MGB_13"}
+Object {x: 3701.34, y: 4307.67, vx: -700, vy: 0, from: "!1_MGB_14"}
+Object {x: 3714.82, y: 3599.16, vx: -494.97, vy: -494.97, from: "!1_MGB_12"}
+Object {x: 3813.81, y: 3641.81, vx: -494.97, vy: -494.97, from: "!1_MGB_13"}
+Object {x: 3666.34, y: 4307.67, vx: -700, vy: 0, from: "!1_MGB_14"}
+Object {x: 3690.07, y: 3574.41, vx: -494.97, vy: -494.97, from: "!1_MGB_12"}
+Object {x: 3789.06, y: 3617.06, vx: -494.97, vy: -494.97, from: "!1_MGB_13"}
+Object {x: 3631.34, y: 4307.67, vx: -700, vy: 0, from: "!1_MGB_14"}
+Object {now: 1366055024788}
+Object {x: 3665.32, y: 3549.66, vx: -494.97, vy: -494.97, from: "!1_MGB_12"}
+Object {x: 3764.31, y: 3592.31, vx: -494.97, vy: -494.97, from: "!1_MGB_13"}
+Object {x: 3596.34, y: 4307.67, vx: -700, vy: 0, from: "!1_MGB_14"}
+Object {x: 3640.57, y: 3524.91, vx: -494.97, vy: -494.97, from: "!1_MGB_12"}
+Object {x: 3739.56, y: 3567.56, vx: -494.97, vy: -494.97, from: "!1_MGB_13"}
+Object {x: 3561.34, y: 4307.67, vx: -700, vy: 0, from: "!1_MGB_14"}
+Object {x: 3615.82, y: 3500.16, vx: -494.97, vy: -494.97, from: "!1_MGB_12"}
+Object {x: 3714.82, y: 3542.82, vx: -494.97, vy: -494.97, from: "!1_MGB_13"}
+Object {x: 3526.34, y: 4307.67, vx: -700, vy: 0, from: "!1_MGB_14"}
+Object {x: 3591.07, y: 3475.41, vx: -494.97, vy: -494.97, from: "!1_MGB_12"}
+Object {x: 3690.07, y: 3518.07, vx: -494.97, vy: -494.97, from: "!1_MGB_13"}
+Object {x: 3491.34, y: 4307.67, vx: -700, vy: 0, from: "!1_MGB_14"}
+Object {x: 3566.32, y: 3450.66, vx: -494.97, vy: -494.97, from: "!1_MGB_12"}
+Object {x: 3665.32, y: 3493.32, vx: -494.97, vy: -494.97, from: "!1_MGB_13"}
+Object {x: 3456.34, y: 4307.67, vx: -700, vy: 0, from: "!1_MGB_14"}
+Object {x: 3541.58, y: 3425.92, vx: -494.97, vy: -494.97, from: "!1_MGB_12"}
+Object {x: 3640.57, y: 3468.57, vx: -494.97, vy: -494.97, from: "!1_MGB_13"}
+Object {x: 3421.34, y: 4307.67, vx: -700, vy: 0, from: "!1_MGB_14"}
+Object {x: 3516.83, y: 3401.17, vx: -494.97, vy: -494.97, from: "!1_MGB_12"}
+Object {x: 3615.82, y: 3443.82, vx: -494.97, vy: -494.97, from: "!1_MGB_13"}
+Object {x: 3386.34, y: 4307.67, vx: -700, vy: 0, from: "!1_MGB_14"}
+Object {x: 3492.08, y: 3376.42, vx: -494.97, vy: -494.97, from: "!1_MGB_12"}
+Object {x: 3591.07, y: 3419.07, vx: -494.97, vy: -494.97, from: "!1_MGB_13"}
+Object {x: 3351.34, y: 4307.67, vx: -700, vy: 0, from: "!1_MGB_14"}
+Object {x: 3467.33, y: 3351.67, vx: -494.97, vy: -494.97, from: "!1_MGB_12"}
+Object {x: 3566.32, y: 3394.32, vx: -494.97, vy: -494.97, from: "!1_MGB_13"}
+Object {x: 3316.34, y: 4307.67, vx: -700, vy: 0, from: "!1_MGB_14"}
+Object {ent0: "!1_MGB_14", ent1: "", impulse: 8750}
+Object {x: 3442.58, y: 3326.92, vx: -494.97, vy: -494.97, from: "!1_MGB_12"}
+Object {x: 3541.58, y: 3369.58, vx: -494.97, vy: -494.97, from: "!1_MGB_13"}
+Object {x: 3314.51, y: 4307.67, vx: 0, vy: 0, from: "!1_MGB_14"}
+Object {id: "!1_MGB_14"}
+Object {x: 3417.83, y: 3302.17, vx: -494.97, vy: -494.97, from: "!1_MGB_12"}
+Object {x: 3516.83, y: 3344.83, vx: -494.97, vy: -494.97, from: "!1_MGB_13"}
+Object {x: 3393.08, y: 3277.42, vx: -494.97, vy: -494.97, from: "!1_MGB_12"}
+Object {x: 3492.08, y: 3320.08, vx: -494.97, vy: -494.97, from: "!1_MGB_13"}
+Object {now: 1366055025788}
+Object {x: 3368.33, y: 3252.67, vx: -494.97, vy: -494.97, from: "!1_MGB_12"}
+Object {x: 3467.33, y: 3295.33, vx: -494.97, vy: -494.97, from: "!1_MGB_13"}
+Object {x: 3343.59, y: 3227.93, vx: -494.97, vy: -494.97, from: "!1_MGB_12"}
+Object {x: 3442.58, y: 3270.58, vx: -494.97, vy: -494.97, from: "!1_MGB_13"}
+Object {x: 3318.84, y: 3203.18, vx: -494.97, vy: -494.97, from: "!1_MGB_12"}
+Object {x: 3417.83, y: 3245.83, vx: -494.97, vy: -494.97, from: "!1_MGB_13"}
+Object {x: 3294.09, y: 3178.43, vx: -494.97, vy: -494.97, from: "!1_MGB_12"}
+Object {x: 3393.08, y: 3221.08, vx: -494.97, vy: -494.97, from: "!1_MGB_13"}
+Object {x: 3269.34, y: 3153.68, vx: -494.97, vy: -494.97, from: "!1_MGB_12"}
+Object {x: 3368.33, y: 3196.33, vx: -494.97, vy: -494.97, from: "!1_MGB_13"}
+Object {x: 3244.59, y: 3128.93, vx: -494.97, vy: -494.97, from: "!1_MGB_12"}
+Object {x: 3343.59, y: 3171.59, vx: -494.97, vy: -494.97, from: "!1_MGB_13"}
+Object {x: 3219.84, y: 3104.18, vx: -494.97, vy: -494.97, from: "!1_MGB_12"}
+Object {x: 3318.84, y: 3146.84, vx: -494.97, vy: -494.97, from: "!1_MGB_13"}
+Object {now: 1366055026788}
+Object {x: 3195.09, y: 3079.43, vx: -494.97, vy: -494.97, from: "!1_MGB_12"}
+Object {x: 3294.09, y: 3122.09, vx: -494.97, vy: -494.97, from: "!1_MGB_13"}
+Object {x: 3170.34, y: 3054.68, vx: -494.97, vy: -494.97, from: "!1_MGB_12"}
+Object {x: 3269.34, y: 3097.34, vx: -494.97, vy: -494.97, from: "!1_MGB_13"}
+Object {x: 3145.6, y: 3029.94, vx: -494.97, vy: -494.97, from: "!1_MGB_12"}
+Object {x: 3244.59, y: 3072.59, vx: -494.97, vy: -494.97, from: "!1_MGB_13"}
+Object {x: 3120.85, y: 3005.19, vx: -494.97, vy: -494.97, from: "!1_MGB_12"}
+Object {x: 3219.84, y: 3047.84, vx: -494.97, vy: -494.97, from: "!1_MGB_13"}
+Object {x: 3096.1, y: 2980.44, vx: -494.97, vy: -494.97, from: "!1_MGB_12"}
+Object {x: 3195.09, y: 3023.09, vx: -494.97, vy: -494.97, from: "!1_MGB_13"}
+Object {x: 3071.35, y: 2955.69, vx: -494.97, vy: -494.97, from: "!1_MGB_12"}
+Object {x: 3170.34, y: 2998.34, vx: -494.97, vy: -494.97, from: "!1_MGB_13"}
+Object {x: 3046.6, y: 2930.94, vx: -494.97, vy: -494.97, from: "!1_MGB_12"}
+Object {x: 3145.6, y: 2973.6, vx: -494.97, vy: -494.97, from: "!1_MGB_13"}
+Object {x: 3021.85, y: 2906.19, vx: -494.97, vy: -494.97, from: "!1_MGB_12"}
+Object {x: 3120.85, y: 2948.85, vx: -494.97, vy: -494.97, from: "!1_MGB_13"}
+Object {x: 2997.1, y: 2881.44, vx: -494.97, vy: -494.97, from: "!1_MGB_12"}
+Object {x: 3096.1, y: 2924.1, vx: -494.97, vy: -494.97, from: "!1_MGB_13"}
+Object {x: 2972.35, y: 2856.69, vx: -494.97, vy: -494.97, from: "!1_MGB_12"}
+Object {x: 3071.35, y: 2899.35, vx: -494.97, vy: -494.97, from: "!1_MGB_13"}
+Object {x: 2947.61, y: 2831.95, vx: -494.97, vy: -494.97, from: "!1_MGB_12"}
+Object {x: 3046.6, y: 2874.6, vx: -494.97, vy: -494.97, from: "!1_MGB_13"}
+Object {x: 2922.86, y: 2807.2, vx: -494.97, vy: -494.97, from: "!1_MGB_12"}
+Object {x: 3021.85, y: 2849.85, vx: -494.97, vy: -494.97, from: "!1_MGB_13"}
+Object {x: 2898.11, y: 2782.45, vx: -494.97, vy: -494.97, from: "!1_MGB_12"}
+Object {x: 2997.1, y: 2825.1, vx: -494.97, vy: -494.97, from: "!1_MGB_13"}
+Object {x: 2873.36, y: 2757.7, vx: -494.97, vy: -494.97, from: "!1_MGB_12"}
+Object {x: 2972.35, y: 2800.35, vx: -494.97, vy: -494.97, from: "!1_MGB_13"}
+Object {x: 2848.61, y: 2732.95, vx: -494.97, vy: -494.97, from: "!1_MGB_12"}
+Object {x: 2947.61, y: 2775.61, vx: -494.97, vy: -494.97, from: "!1_MGB_13"}
+Object {x: 2823.86, y: 2708.2, vx: -494.97, vy: -494.97, from: "!1_MGB_12"}
+Object {x: 2922.86, y: 2750.86, vx: -494.97, vy: -494.97, from: "!1_MGB_13"}
+Object {x: 2799.11, y: 2683.45, vx: -494.97, vy: -494.97, from: "!1_MGB_12"}
+Object {x: 2898.11, y: 2726.11, vx: -494.97, vy: -494.97, from: "!1_MGB_13"}
+Object {x: 2774.36, y: 2658.7, vx: -494.97, vy: -494.97, from: "!1_MGB_12"}
+Object {x: 2873.36, y: 2701.36, vx: -494.97, vy: -494.97, from: "!1_MGB_13"}
+Object {x: 2749.62, y: 2633.96, vx: -494.97, vy: -494.97, from: "!1_MGB_12"}
+Object {x: 2848.61, y: 2676.61, vx: -494.97, vy: -494.97, from: "!1_MGB_13"}
+Object {x: 2724.87, y: 2609.21, vx: -494.97, vy: -494.97, from: "!1_MGB_12"}
+Object {x: 2823.86, y: 2651.86, vx: -494.97, vy: -494.97, from: "!1_MGB_13"}
+Object {now: 1366055027788}
+Object {x: 2700.12, y: 2584.46, vx: -494.97, vy: -494.97, from: "!1_MGB_12"}
+Object {x: 2799.11, y: 2627.11, vx: -494.97, vy: -494.97, from: "!1_MGB_13"}
+Object {x: 2675.37, y: 2559.71, vx: -494.97, vy: -494.97, from: "!1_MGB_12"}
+Object {x: 2774.36, y: 2602.36, vx: -494.97, vy: -494.97, from: "!1_MGB_13"}
+Object {x: 2650.62, y: 2534.96, vx: -494.97, vy: -494.97, from: "!1_MGB_12"}
+Object {x: 2749.62, y: 2577.62, vx: -494.97, vy: -494.97, from: "!1_MGB_13"}
+Object {x: 2625.87, y: 2510.21, vx: -494.97, vy: -494.97, from: "!1_MGB_12"}
+Object {x: 2724.87, y: 2552.87, vx: -494.97, vy: -494.97, from: "!1_MGB_13"}
+Object {x: 2601.12, y: 2485.46, vx: -494.97, vy: -494.97, from: "!1_MGB_12"}
+Object {x: 2700.12, y: 2528.12, vx: -494.97, vy: -494.97, from: "!1_MGB_13"}
+Object {ent0: "!1_MGB_12", ent1: "", impulse: 6187.18}
+Object {x: 2576.37, y: 2480.51, vx: -494.97, vy: 0, from: "!1_MGB_12"}
+Object {x: 2675.37, y: 2503.37, vx: -494.97, vy: -494.97, from: "!1_MGB_13"}
+Object {ent0: "!1_MGB_13", ent1: "", impulse: 6187.18}
+Object {x: 2551.63, y: 2480.51, vx: -494.97, vy: 0, from: "!1_MGB_12"}
+Object {x: 2650.62, y: 2480.51, vx: -494.97, vy: 0, from: "!1_MGB_13"}
+Object {id: "!1_MGB_12"}
+Object {id: "!1_MGB_13"}
+Object {now: 1366055028788}

@@ -28,6 +28,10 @@
   <object x="0" y="608" width="384" height="32"/>
   <object x="0" y="352" width="32" height="256"/>
   <object x="0" y="64" width="32" height="224"/>
+  <object x="0" y="-32" width="800" height="32"/>
+  <object x="800" y="-32" width="32" height="672"/>
+  <object x="-32" y="640" width="864" height="32"/>
+  <object x="-32" y="-32" width="32" height="672"/>
  </objectgroup>
  <objectgroup name="environment" width="25" height="20">
   <object name="Team0Spawn0" type="SpawnPoint" x="384" y="288" width="32" height="32">

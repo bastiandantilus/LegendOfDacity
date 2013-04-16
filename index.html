@@ -94,7 +94,7 @@
 		</script>
 
 		<script type="text/javascript">
-      IS_SERVER = false;
+      IS_SERVER = true;
 
       var init = function() {
 
@@ -140,8 +140,8 @@
         // Shared scripts
         "./shared/core/core.js", "./shared/core/box2D.js", "./shared/core/Constants.js", "./shared/core/Factory.js", "./shared/core/Timer.js", "./shared/core/Entity.js", "./shared/core/GameEngine.js", "./shared/core/PhysicsEngine.js", "./shared/core/Player.js", "./shared/core/TileMap.js", "./shared/core/Weapon.js", "./shared/core/WeaponInstance.js", "./shared/core/Logger.js", "./shared/core/Util.js",
 
-        //"./shared/maps/map1.js",
-        "./shared/maps/map1.js", "./shared/environment/SpawnPoint.js", "./shared/environment/Teleporter.js", "./shared/environment/Spawner.js", "./shared/items/HealthCanister.js", "./shared/items/EnergyCanister.js", "./shared/items/QuadDamage.js", "./shared/weapons/Landmine.js", "./shared/weapons/ShotGun.js", "./shared/weapons/RocketLauncher.js", "./shared/weapons/Shield.js", "./shared/weapons/Thrusters.js", "./shared/weapons/ChainGun.js", "./shared/weapons/MachineGun.js", "./shared/weapons/Sword.js", "./shared/weapons/BounceBallGun.js", "./shared/weaponinstances/SimpleProjectile.js", "./shared/weaponinstances/BounceBallBullet.js", "./shared/weaponinstances/LandmineDisk.js", "./shared/weaponinstances/Shield.js", "./shared/weaponinstances/Sword.js",
+        //"./shared/maps/map1.js", 
+        "./shared/environment/SpawnPoint.js", "./shared/environment/Teleporter.js", "./shared/environment/Spawner.js", "./shared/items/HealthCanister.js", "./shared/items/EnergyCanister.js", "./shared/items/QuadDamage.js", "./shared/weapons/Landmine.js", "./shared/weapons/ShotGun.js", "./shared/weapons/RocketLauncher.js", "./shared/weapons/Shield.js", "./shared/weapons/Thrusters.js", "./shared/weapons/ChainGun.js", "./shared/weapons/MachineGun.js", "./shared/weapons/Sword.js", "./shared/weapons/BounceBallGun.js", "./shared/weaponinstances/SimpleProjectile.js", "./shared/weaponinstances/BounceBallBullet.js", "./shared/weaponinstances/LandmineDisk.js", "./shared/weaponinstances/Shield.js", "./shared/weaponinstances/Sword.js",
 
         //CLM note , we need to load the client scripts AFTER the shared scripts
         //allowing them to overload any global objects defined above.
@@ -168,26 +168,25 @@
       function readyToRock() {
 
         Logger.log("Ready to rock");
-        console.log("Ready to rock");
 
         //kick off our animation
         requestAnimFrame(run);
 
-        loop_run(1000, function() {
-          gGameEngine.gSocket.send_ping({
-            now : new Date().getTime()
-          });
-        });
+        /* loop_run(1000, function() {
+         gGameEngine.gSocket.send_ping({
+         now : new Date().getTime()
+         });
+         }); */
       }
 
-      var gameLoadComplete = function(gameURL, player_game_key) {
-      	
+      var gameLoadComplete = function(/*gameURL, player_game_key*/) {
+
         var packet_handler = {
           welcome : function(msg) {
-          	console.log(msg);
+            console.log(msg);
             var p0 = gGameEngine.namedEntities[msg.youare];
             if (!p0)
-            	alert('no player ' + msg.youare);
+              alert('no player ' + msg.youare);
             p0.toOthers = p0.toAll = gGameEngine.gSocket;
             p0.color = msg.color;
             gGameEngine.gPlayer0 = p0;
@@ -212,27 +211,27 @@
             }
           },
           spawn : function(msg) {
-          	console.log(msg);
+            console.log(msg);
             gGameEngine.spawnEntity(msg.type, msg.x, msg.y, JSON.parse(msg.settings));
           },
           unspawn : function(msg) {
-          	console.log(msg);
+            console.log(msg);
             gGameEngine.unspawnPlayer(msg.id);
           },
           collision : function(msg) {
-          	console.log(msg);
+            console.log(msg);
             gGameEngine.on_collision(msg);
           },
           statusMsg : function(msg) {
-          	console.log(msg);
+            console.log(msg);
             printMsg(msg.msg);
           },
           DEFAULT : function(msg, name) {
-          	console.log(msg, name);
+            console.log(msg, name);
             if (msg.from) {
               var ent = gGameEngine.namedEntities[msg.from];
               if (!ent) {
-                Logger.log("no entity named '" +    msg.from + "'");
+                Logger.log("no entity named '" + msg.from + "'");
               } else if (ent['on_' + name]) {
                 ent['on_'+name](msg);
               }
@@ -240,12 +239,14 @@
           }
         };
 
-        disablePopup();
+        //disablePopup();
         //load our game and move the world forward.
 
-        document.getElementById("impress").style.display = "none";
-        document.getElementById('welcomescreen').style.display = "none";
-        document.getElementById("game_canvas").style.display = "block";
+        //document.getElementById("impress").style.display = "none";
+        //document.getElementById('welcomescreen').style.display = "none";
+        var game_canvas = document.getElementById("game_canvas");
+        game_canvas.style.display = "block";
+        document.body.insertBefore(game_canvas, document.body.firstChild);
 
         Logger.log("loaded scripts");
 
@@ -255,28 +256,82 @@
         Logger.log("setup engines");
 
         gSM.stopAll();
-        gSM.playSound("./sound/bg_game.ogg", {
-          looping : true,
-          volume : 0.25
-        });
+        /* gSM.playSound("./sound/bg_game.ogg", {
+        looping : true,
+        volume : 0.25
+        }); */
 
-        Logger.log("connecting to server: " + gameURL);
-        gGameEngine.gSocket = protoize(io.connect(gameURL), packet_handler);
+        //Logger.log("connecting to server: " + gameURL);
+        /* gGameEngine.gSocket = protoize(io.connect(gameURL), packet_handler);
          gGameEngine.gSocket.send_hello({
-          player_game_key : player_game_key
-        });
-        gGameEngine.gSocket.on('disconnect', function() {
-          alert("Games server disconnected.");
-          window.location.href = "/";
-        });
-       
-        
-      }
+         player_game_key : player_game_key
+         });
+         gGameEngine.gSocket.on('disconnect', function() {
+         alert("Games server disconnected.");
+         window.location.href = "/";
+         }); */
 
+        gGameEngine.gSocket = {
+          q_input : function() {
+            console.log("q_input", arguments[0]);
+          },
+          q_phys : function() {
+            gGameEngine.namedEntities["!1"].on_phys(arguments[0]);
+            console.log("q_phys", arguments[0]);
+          },
+          sendq : function() {
+            console.log("send_q", arguments[0]);
+          },
+          q_stats : function() {
+          	console.log("q_stats", arguments[0]);
+          }
+        };
+
+        var player = {
+          id : "!1",
+          type : "Player",
+          x : 400,
+          y : 400,
+          settings : {
+            "name" : "!1",
+            "team" : 1,
+            "userID" : "bot*5094",
+            "displayName" : "bot*5094",
+            "type" : "Player",
+            "hsize" : {
+              "x" : 26,
+              "y" : 26
+            }
+          }
+        };
+        var msg = player;
+        gGameEngine.spawnEntity(msg.type, msg.x, msg.y, msg.settings);
+
+        var welcome = function(msg) {
+          console.log(msg);
+          var p0 = gGameEngine.namedEntities[msg.youare];
+          if (!p0)
+            alert('no player ' + msg.youare);
+          p0.toOthers = p0.toAll = gGameEngine.gSocket;
+          p0.color = msg.color;
+          gGameEngine.gPlayer0 = p0;
+          readyToRock();
+
+          Logger.log("welcome " + msg.youare);
+        }
+        welcome({
+          youare : player.id,
+          color : 1
+        });
+
+        // Since the server isn't going to tell us that.
+
+      }
       //-----------------------------------------
       var run = function() {
         //check for resizes and adjust accordingly.
         gRenderEngine.canvas.style.position = "absolute";
+        gRenderEngine.canvas.style.top = "0";
         if (gRenderEngine.canvas.width != window.innerWidth) {
           gRenderEngine.canvas.width = window.innerWidth;
         }
@@ -316,6 +371,15 @@
 
       //do not touch this.
       document.addEventListener('DOMContentLoaded', document_onload, false);
+
+      var map = "img/fantasy.json";
+
+      xhrGet(map, false, function(data) {
+        parseMapJSON(data.responseText);
+      });
+      var parseMapJSON = function(mapJSON) {
+        window.map1 = JSON.parse(mapJSON);
+      }
 
 		</script>
 

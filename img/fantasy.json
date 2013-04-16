@@ -129,6 +129,58 @@
                  "width":32,
                  "x":0,
                  "y":64
+                }, 
+                {
+                 "height":32,
+                 "name":"",
+                 "properties":
+                    {
+
+                    },
+                 "type":"",
+                 "visible":true,
+                 "width":800,
+                 "x":0,
+                 "y":-32
+                }, 
+                {
+                 "height":672,
+                 "name":"",
+                 "properties":
+                    {
+
+                    },
+                 "type":"",
+                 "visible":true,
+                 "width":32,
+                 "x":800,
+                 "y":-32
+                }, 
+                {
+                 "height":32,
+                 "name":"",
+                 "properties":
+                    {
+
+                    },
+                 "type":"",
+                 "visible":true,
+                 "width":864,
+                 "x":-32,
+                 "y":640
+                }, 
+                {
+                 "height":672,
+                 "name":"",
+                 "properties":
+                    {
+
+                    },
+                 "type":"",
+                 "visible":true,
+                 "width":32,
+                 "x":-32,
+                 "y":-32
                 }],
          "opacity":1,
          "type":"objectgroup",
