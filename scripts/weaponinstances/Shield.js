@@ -49,11 +49,11 @@ ShieldInstanceClass = WeaponInstanceClass.extend({
     this.physBody.SetLinearVelocity(new Vec2(0, 0));
 	this.energyCost = 0.05;
 	
-	if(!IS_SERVER)
-	{
+	//if(!IS_SERVER)
+	//{
 		gGameEngine.playWorldSound("./sound/shield_activate.ogg",x,y);
 		this.zIndex = 20;
-	}
+	//}
   },
   kill: function () {
     //remove my physics body
@@ -65,7 +65,7 @@ ShieldInstanceClass = WeaponInstanceClass.extend({
   
   update: function () 
   {
-	if(!IS_SERVER)
+	if(IS_CLIENT)
 	{
 		if(!this.owningPlayer.pInput.fire2 || this.owningPlayer.energy<=0)
 			this.markForDeath = true;

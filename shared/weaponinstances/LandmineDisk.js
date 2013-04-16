@@ -75,13 +75,13 @@ LandmineDiskClass = WeaponInstanceClass.extend({
 
 
     //spawn impact visual
-	if (!IS_SERVER) {
+	//if (!IS_SERVER) {
                 this.makeBang();
-	}
-	else
-	{
+	//}
+	//else
+	//{
 		gGameEngine.dealDmg(this,physOwner,parseInt(15 * this.damageMultiplier));
-	}
+	//}
 
     this.markForDeath = true;
 

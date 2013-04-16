@@ -50,7 +50,7 @@ SwordInstanceClass = WeaponInstanceClass.extend({
     this.physBody.SetLinearVelocity(new Vec2(0, 0));
 	this.energyCost = 0.05;
 	
-	if(!IS_SERVER)
+	if(IS_CLIENT)
 	{
 		gGameEngine.playWorldSound("./sound/sword_activate.ogg",x,y);
 		this.zIndex=20;
@@ -67,7 +67,7 @@ SwordInstanceClass = WeaponInstanceClass.extend({
   //-----------------------------------------
   update: function () 
   {
-	if(!IS_SERVER)
+	if(IS_CLIENT)
 	{
 		if(!this.owningPlayer.pInput.fire2 || this.owningPlayer.energy<=0)
 			this.markForDeath = true;
@@ -100,14 +100,14 @@ SwordInstanceClass = WeaponInstanceClass.extend({
     
 
     //spawn impact visual
-	if (!IS_SERVER) {
+	//if (!IS_SERVER) {
 		
 				
-	}
-	else
-	{
+	//}
+	//else
+	//{
 		gGameEngine.dealDmg(this,physOwner,parseInt(15 * this.damageMultiplier));
-	}
+	//}
 
 
     return true; //return false if we don't validate the collision

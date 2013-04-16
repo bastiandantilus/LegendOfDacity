@@ -64,8 +64,8 @@ SimpleProjectileClass = WeaponInstanceClass.extend({
 
     this.physBody.SetLinearVelocity(new Vec2(settings.dir.x * this._speed, settings.dir.y * this._speed));
 	
-	if(!IS_SERVER)
-	{
+	//if(!IS_SERVER)
+	//{
 		this.zIndex = 20;
 		this._spriteAnim = new SpriteSheetAnimClass();
 		this._spriteAnim.loadSheet('grits_effects',"img/grits_effects.png");
@@ -84,7 +84,7 @@ SimpleProjectileClass = WeaponInstanceClass.extend({
 				gGameEngine.playWorldSound(settings.spawnSound,x,y);
 			}
 		}
-	}
+	//}
   },
  
   //--------------------------------------
@@ -148,7 +148,7 @@ SimpleProjectileClass = WeaponInstanceClass.extend({
     
 
     //spawn impact visual
-	if (!IS_SERVER) {
+	//if (!IS_SERVER) {
 		if(this._impactFrameNames)
 		{
 			var pPos = this.physBody.GetPosition();
@@ -161,11 +161,11 @@ SimpleProjectileClass = WeaponInstanceClass.extend({
 				});
 		}
 				
-	}
-	else
-	{
+	//}
+	//else
+	//{
 		gGameEngine.dealDmg(this,physOwner,parseInt(this._dmgAmt * this.damageMultiplier));
-	}
+	//}
 
     this.markForDeath = true;
 

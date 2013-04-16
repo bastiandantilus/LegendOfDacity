@@ -95,6 +95,7 @@
 
 		<script type="text/javascript">
       IS_SERVER = true;
+      IS_CLIENT = true;
 
       var init = function() {
 
@@ -239,6 +240,7 @@
           }
         };
 
+		window.packet_handler = packet_handler;
         //disablePopup();
         //load our game and move the world forward.
 
@@ -271,19 +273,26 @@
          window.location.href = "/";
          }); */
 
+		gGameEngine.gSocketFunction = function(type, msg, name){
+			console.log(type, msg);
+			if (!(type in packet_handler)) {
+				type = "DEFAULT";
+			}
+			packet_handler[type](msg, name);
+		}
+
         gGameEngine.gSocket = {
-          q_input : function() {
-            console.log("q_input", arguments[0]);
+          q_input : function(msg, name) {
+            gGameEngine.gSocketFunction("input", msg, name)
           },
-          q_phys : function() {
-            gGameEngine.namedEntities["!1"].on_phys(arguments[0]);
-            console.log("q_phys", arguments[0]);
+          q_phys : function(msg, name) {
+			gGameEngine.gSocketFunction("phys", msg, name)
           },
           sendq : function() {
-            console.log("send_q", arguments[0]);
+            console.log("send_q", arguments);
           },
-          q_stats : function() {
-          	console.log("q_stats", arguments[0]);
+          q_stats : function(msg, name) {
+          	gGameEngine.gSocketFunction("stats", msg, name)
           }
         };
 

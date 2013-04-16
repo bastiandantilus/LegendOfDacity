@@ -93,16 +93,16 @@ BounceBallBulletClass = WeaponInstanceClass.extend({
       if (physOwner._killed) return false;
 
       //spawn impact visual
-      if (!IS_SERVER) {
+      //if (!IS_SERVER) {
         var pPos = this.physBody.GetPosition();
         var ent = gGameEngine.spawnEntity("BounceBallImpact", pPos.x, pPos.y, null);
         // TODO: pass in settings
         ent.onInit(pPos);
-      }
-      else
-      {
+      //}
+      //else
+      //{
         gGameEngine.dealDmg(this,physOwner,parseInt(5 * this.damageMultiplier));
-      }
+      //}
 
       this.markForDeath = true;
     } else {

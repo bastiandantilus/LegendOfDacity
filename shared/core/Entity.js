@@ -73,21 +73,21 @@ EntityClass = Class.extend({
 
   //-----------------------------------------
   on_phys: function (msg) {
-    if (!IS_SERVER) {
+    //if (!IS_SERVER) {
       this.targetPhys = msg;
       this.tpOrig = {x:msg.x, y:msg.y, vx:msg.vx, vy:msg.vy, t:new Date().getTime()};
       this.snapped = false;
-    } else {
+    //} else {
       this.physBody.SetPosition(new Vec2(msg.x, msg.y));
       this.physBody.SetLinearVelocity(new Vec2(msg.vx, msg.vy));
-    }
+    //}
   },
   
   //-----------------------------------------
   getPhysicsSyncAdjustment: function () {
     var out = {x:0, y:0};
     var tp = this.targetPhys;
-    if (tp && !IS_SERVER) {
+    if (tp && IS_CLIENT) {
       var op = this.tpOrig;
       var dt = (new Date().getTime() - op.t)/1000;
       if (dt < 0.2) {

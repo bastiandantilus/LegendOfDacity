@@ -22,7 +22,7 @@ SpawnerClass = EntityClass.extend({
   },
   kill: function () {},
   update: function () {
-	if(!IS_SERVER)	return;
+	//if(!IS_SERVER)	return;
     if (this.lastSpawned == null)
 	{
 		if (this.nextSpawnTime>gGameEngine.getTime()) 

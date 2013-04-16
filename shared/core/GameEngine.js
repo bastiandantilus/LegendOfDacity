@@ -95,14 +95,16 @@ GameEngineClass = Class.extend({
           if (typ[0] == 0 || typ[0] == 2)
             return;
 
-        if (IS_SERVER) {
+        //if (IS_SERVER) {
           //we care about sending this along, so do such.
-          Server.broadcaster.q_collision({
+          //Server.broadcaster.q_collision({
+          var msg = ({
             ent0 : nm[0],
             ent1 : nm[1],
             impulse : impulse,
           });
-        } else {
+          gGameEngine.on_collision(msg); // it's what the client would do if the serve sent this message
+        //} else {
           //if we're client ignore the collision unless it's projectile/wall
           if (typ[0] == 1)
             if (typ[1] != 2)
@@ -111,7 +113,7 @@ GameEngineClass = Class.extend({
           if (typ[1] == 1)
             if (typ[0] != 2)
               return;
-        }
+        //}
         gGameEngine.onCollisionTouch(bodyA, bodyB, impulse);
 
       }
@@ -123,8 +125,8 @@ GameEngineClass = Class.extend({
 
   },
   notifyPlayers : function(msg) {
-    if (!IS_SERVER)
-      return;
+    //if (!IS_SERVER)
+    //  return;
     Server.broadcaster.q_statusMsg({
       msg : msg
     });
@@ -244,7 +246,7 @@ GameEngineClass = Class.extend({
   },
 
   respawnEntity : function(respkt) {
-    if (IS_SERVER) {
+    //if (IS_SERVER) {
       var player = this.namedEntities[respkt.from];
       if (!player) {
         Logger.log("player.id = " + respkt.from + " Not found for respawn");
@@ -253,7 +255,7 @@ GameEngineClass = Class.extend({
 
       this._deferredRespawn.push(respkt);
 
-    }
+    //}
 
   },
 
@@ -370,8 +372,8 @@ GameEngineClass = Class.extend({
   },
   //-----------------------------
   dealDmg : function(fromObj, toPlayer, amt) {
-    if (!IS_SERVER)
-      return;
+    //if (!IS_SERVER)
+    //  return;
     var objOwner = fromObj.owningPlayer;
     if (toPlayer == null || toPlayer._killed)
       return false;

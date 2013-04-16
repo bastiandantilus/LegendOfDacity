@@ -43,7 +43,7 @@ var TileMapLoaderClass = Class.extend({
     this.pixelSize.x = this.numXTiles * this.tileSize.x;
     this.pixelSize.y = this.numYTiles * this.tileSize.y;
     //load our tilesets if we are a client.
-    if (!IS_SERVER) {
+    if (IS_CLIENT) {
 		var mapInst = this;
       for (var i = 0; i < map.tilesets.length; i++) {
         var img = new Image();
