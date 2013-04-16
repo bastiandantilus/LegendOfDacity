@@ -327,7 +327,9 @@ GameEngineClass = Class.extend({
     this._deferredKill = [];
 
     for (var p in this.gPlayers) {
+      
       this.gPlayers[p].applyInputs();
+      
     }
 
     //respawn entities
@@ -351,10 +353,11 @@ GameEngineClass = Class.extend({
         wep2 : pkt.wep2,
       };
       p.on_setWeapons(wep_pktt);
-      p.toAll.q_setWeapons(wep_pktt);
-      p.toAll.q_setPosition(ent.pos);
 
-      Logger.log("Respawned entity " + p.name + "at location " + p.pos.x + "," + p.pos.y);
+      //p.toAll.q_setWeapons(wep_pktt);
+      //p.toAll.q_setPosition(ent.pos);
+
+      Logger.log("Respawned entity " + p.name + " at location " + p.pos.x + "," + p.pos.y);
     }
     this._deferredRespawn.length = 0;
 

@@ -14,6 +14,13 @@
 		<style>
 			body {
 				padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
+				background: url(img/tilesets/Greenland_Ocean.gif);
+			}
+			#welcomescreen {
+				background: #CCFFCC;
+				padding: 15px;
+				border-radius: 10px;
+				
 			}
 		</style>
 
@@ -141,7 +148,7 @@
         // Shared scripts
         "./shared/core/core.js", "./shared/core/box2D.js", "./shared/core/Constants.js", "./shared/core/Factory.js", "./shared/core/Timer.js", "./shared/core/Entity.js", "./shared/core/GameEngine.js", "./shared/core/PhysicsEngine.js", "./shared/core/Player.js", "./shared/core/TileMap.js", "./shared/core/Weapon.js", "./shared/core/WeaponInstance.js", "./shared/core/Logger.js", "./shared/core/Util.js",
 
-        //"./shared/maps/map1.js", 
+        //"./shared/maps/map1.js",
         "./shared/environment/SpawnPoint.js", "./shared/environment/Teleporter.js", "./shared/environment/Spawner.js", "./shared/items/HealthCanister.js", "./shared/items/EnergyCanister.js", "./shared/items/QuadDamage.js", "./shared/weapons/Landmine.js", "./shared/weapons/ShotGun.js", "./shared/weapons/RocketLauncher.js", "./shared/weapons/Shield.js", "./shared/weapons/Thrusters.js", "./shared/weapons/ChainGun.js", "./shared/weapons/MachineGun.js", "./shared/weapons/Sword.js", "./shared/weapons/BounceBallGun.js", "./shared/weaponinstances/SimpleProjectile.js", "./shared/weaponinstances/BounceBallBullet.js", "./shared/weaponinstances/LandmineDisk.js", "./shared/weaponinstances/Shield.js", "./shared/weaponinstances/Sword.js",
 
         //CLM note , we need to load the client scripts AFTER the shared scripts
@@ -184,7 +191,7 @@
 
         var packet_handler = {
           welcome : function(msg) {
-            console.log(msg);
+            //console.log(msg);
             var p0 = gGameEngine.namedEntities[msg.youare];
             if (!p0)
               alert('no player ' + msg.youare);
@@ -212,23 +219,23 @@
             }
           },
           spawn : function(msg) {
-            console.log(msg);
+            //console.log(msg);
             gGameEngine.spawnEntity(msg.type, msg.x, msg.y, JSON.parse(msg.settings));
           },
           unspawn : function(msg) {
-            console.log(msg);
+            //console.log(msg);
             gGameEngine.unspawnPlayer(msg.id);
           },
           collision : function(msg) {
-            console.log(msg);
+            //console.log(msg);
             gGameEngine.on_collision(msg);
           },
           statusMsg : function(msg) {
-            console.log(msg);
+            //console.log(msg);
             printMsg(msg.msg);
           },
           DEFAULT : function(msg, name) {
-            console.log(msg, name);
+            //console.log(msg, name);
             if (msg.from) {
               var ent = gGameEngine.namedEntities[msg.from];
               if (!ent) {
@@ -240,12 +247,11 @@
           }
         };
 
-		window.packet_handler = packet_handler;
         //disablePopup();
         //load our game and move the world forward.
 
         //document.getElementById("impress").style.display = "none";
-        //document.getElementById('welcomescreen').style.display = "none";
+        document.getElementById('welcomescreen').style.display = "none";
         var game_canvas = document.getElementById("game_canvas");
         game_canvas.style.display = "block";
         document.body.insertBefore(game_canvas, document.body.firstChild);
@@ -272,71 +278,75 @@
          alert("Games server disconnected.");
          window.location.href = "/";
          }); */
-
-		gGameEngine.gSocketFunction = function(type, msg, name){
-			console.log(type, msg);
-			if (!(type in packet_handler)) {
-				type = "DEFAULT";
-			}
-			packet_handler[type](msg, name);
-		}
+        gGameEngine.traceAll = false;
+        gGameEngine.gSocketFunction = function(type, msg, name) {
+          if (gGameEngine.traceAll === true)
+            console.log(type, msg);
+          if (!( type in packet_handler)) {
+            type = "DEFAULT";
+          }
+          packet_handler[type](msg, name);
+        }
 
         gGameEngine.gSocket = {
           q_input : function(msg, name) {
             gGameEngine.gSocketFunction("input", msg, name)
           },
           q_phys : function(msg, name) {
-			gGameEngine.gSocketFunction("phys", msg, name)
+            gGameEngine.gSocketFunction("phys", msg, name)
           },
-          sendq : function() {
-            console.log("send_q", arguments);
+          sendq : function(msg, name) {
+            //console.log("send_q", arguments);
           },
           q_stats : function(msg, name) {
-          	gGameEngine.gSocketFunction("stats", msg, name)
-          }
+            gGameEngine.gSocketFunction("stats", msg, name)
+          },
+          q_statusMsg : function(msg, name) {
+            console.log("status", msg, name);
+            gGameEngine.gSocketFunction("status", msg, name)
+          },
         };
 
-        var player = {
-          id : "!1",
-          type : "Player",
-          x : 400,
-          y : 400,
-          settings : {
-            "name" : "!1",
-            "team" : 1,
-            "userID" : "bot*5094",
-            "displayName" : "bot*5094",
-            "type" : "Player",
-            "hsize" : {
-              "x" : 26,
-              "y" : 26
+        Server = {};
+        Server.broadcaster = gGameEngine.gSocket;
+
+        var spawnPlayer = function(id, team, userID, x, y) {
+          var msg = {
+            id : id,
+            type : "Player",
+            x : x,
+            y : y,
+            settings : {
+              "name" : id,
+              "team" : team,
+              "userID" : userID,
+              "displayName" : userID,
+              "type" : "Player",
+              "hsize" : {
+                "x" : 26,
+                "y" : 26
+              }
             }
-          }
-        };
-        var msg = player;
-        gGameEngine.spawnEntity(msg.type, msg.x, msg.y, msg.settings);
+          };
+          gGameEngine.spawnEntity(msg.type, msg.x, msg.y, msg.settings);
 
-        var welcome = function(msg) {
-          console.log(msg);
-          var p0 = gGameEngine.namedEntities[msg.youare];
-          if (!p0)
-            alert('no player ' + msg.youare);
-          p0.toOthers = p0.toAll = gGameEngine.gSocket;
-          p0.color = msg.color;
-          gGameEngine.gPlayer0 = p0;
-          readyToRock();
-
-          Logger.log("welcome " + msg.youare);
+          return msg;
         }
-        welcome({
+        var player0 = "!1";
+
+        var player = spawnPlayer(player0, 1, "player0", 400, 400);
+
+        var bot = spawnPlayer("bot1", 0, "Bot", 500, 500);
+
+        packet_handler.welcome({
           youare : player.id,
           color : 1
         });
 
-        // Since the server isn't going to tell us that.
-
       }
       //-----------------------------------------
+
+      var bot_respawning = false;
       var run = function() {
         //check for resizes and adjust accordingly.
         gRenderEngine.canvas.style.position = "absolute";
@@ -350,6 +360,26 @@
 
         gRenderEngine.context.clearRect(0, 0, gRenderEngine.canvas.width, gRenderEngine.canvas.height);
         gGameEngine.run();
+
+        var bot1 = gGameEngine.gPlayers.bot1;
+        if (bot1.isDead && bot_respawning == false) {
+          setTimeout(function() {
+            gGameEngine.respawnEntity({
+              from : "bot1",
+              wep0 : "BounceBallGun",
+              wep1 : "ChainGun",
+              wep2 : "Shield"
+            });
+            bot_respawning = false;
+          }, 5000);
+          bot_respawning = true;
+
+        }
+        for (p in gGameEngine.gPlayers) {
+          if (gGameEngine.gPlayers[p].energy < gGameEngine.gPlayers[p].maxEnergy) {
+            gGameEngine.gPlayers[p].energy += 0.1;
+          }
+        }
         //if (mrdoob_stats)
         //mrdoob_stats.update();
         requestAnimFrame(run);
@@ -381,7 +411,7 @@
       //do not touch this.
       document.addEventListener('DOMContentLoaded', document_onload, false);
 
-      var map = "img/fantasy.json";
+      var map = "img/battle.json";
 
       xhrGet(map, false, function(data) {
         parseMapJSON(data.responseText);
@@ -408,7 +438,7 @@
 					<div class="nav-collapse collapse">
 						<ul class="nav">
 							<li class="active">
-								<a href="#">Home</a>
+								<a href=".">Home</a>
 							</li>
 							<!-- <li>
 							<a href="#about">About</a>
@@ -422,7 +452,7 @@
 			</div>
 		</div>
 
-		<div class="container">
+		<div class="container" id='welcomescreen'>
 
 			<h1>The Legend of Dacity</h1>
 			<div id='game_canvas' style="display:none">
@@ -435,8 +465,13 @@
 					</div>
 				</div>
 			</div>
-			<a href="#" id="play_button" onclick="playSoundInstance('./sound/bfxr_magic.wav'); play_game(); return false;"
-			onmouseover="playSoundInstance('./sound/bfxr_low_coin.wav')"><strong>Play</strong></a>
+			<p>
+				<a href="#" id="play_button" class="btn btn-primary btn-large"
+				onclick="playSoundInstance('./sound/bfxr_magic.wav');
+				$doc('#play_button').remove();
+				play_game(); return false;"
+				onmouseover="playSoundInstance('./sound/bfxr_low_coin.wav')">Play</a>
+			</p>
 			<footer class="navbar">
 				<p id="contact">
 					&copy; Copyright 2013 by <a href="http://bastiandantilus.com" title="View Scott's blog">Scott Robert Lawrence</a>

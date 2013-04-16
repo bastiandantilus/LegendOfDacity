@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" width="100" height="100" tilewidth="32" tileheight="32">
+ <tileset firstgid="1" name="plowed_soil" tilewidth="32" tileheight="32">
+  <image source="img/tilesets/plowed_soil.png" trans="ffffff" width="96" height="192"/>
+ </tileset>
+ <tileset firstgid="19" name="tallgrass" tilewidth="32" tileheight="32">
+  <image source="img/tilesets/tallgrass.png" trans="ffffff" width="96" height="192"/>
+ </tileset>
+ <tileset firstgid="37" name="reed" tilewidth="32" tileheight="32">
+  <image source="img/tilesets/reed.png" trans="ffffff" width="96" height="320"/>
+ </tileset>
+ <layer name="Grass" width="100" height="100">
+  <data encoding="base64" compression="zlib">
+   eJzt2UtuwkAURUGPCBDzyzz73ybeAGBsJI7kGtQG7tFTD/o6DMMVAFb45yv0aNGjRY8WPVr0aNGjRY8WPVr0aNGjRY8WPVr0aNGjRY8WPTrOenxkw2d+JvuZDnqsMmfr3eR3plGPVY5vbK2HHlvzqsff5KaHHhulR4seLd7zliU9nt2MHsuNC3u4Dz22QI8WPVr0aNGjRY8WPXpOw+v/wXdc9MjRo0WPFj1a9GjRo0WPFj1a9GjRo0WPFj1a9GjRo0WPFj1a9GjRo0WPFj1a9GjRo0WPFj1a9GjRo0WPFj1a9GjRo0WPFj1a9GjRo0WPFj1a9GjRo0WPFj1a9GjRo0WPFj1a9GjRo0WPFj1a9GjRo0WPFj1a9GjRo0WPFj1aHvUAgLnuKNwMJg==
+  </data>
+ </layer>
+ <layer name="Bushes" width="100" height="100">
+  <data encoding="base64" compression="zlib">
+   eJztmdtKw1AABPs7vnupWhX9/48yBQMinjQoXZLZGThvbabZhTZ0DwcREZHt8TCdRx2bgZKVffQ5EjxN56RjM7xM502HyK/cTudex2ag/NZSfs8pWdlHnyMBJSv76HMkoGRlH32OBOf7OB6u++xOcfzk7sKZuV3x2vnM93Gz8vWNjhHPC+f7f2nn/3JeV57j11m6drtjxPvC+Vh43xLz9+7pwvX/6zgGHNe+jwTzfVzzM1IcCSjPPqTnK0JW9tHnSEDJitIHZdt2P+9zSB+Ubdv9vM+RgJKVffQ5ElCyso8+RwJKVvbR50hA2bbdz3scI/a2O1McI/a6O7ufr4eybbuf9zkSULKyjz5HAkpWlD4o27b7eZ9D+qBs2+7nfY4ElKzso8+RgJKVffQ5ElCyso8+RwLKtu1+3uMYsbfdmeIYsdfd2f18PZRt2/28z5GAkpV99DkSULKi9EHZtt3P+xzSB2Xbdj/vcySgZGUffY4ElKzso8+RgJKVffQ5ElC2bffzHseIve3OFMeIve7O7ufroWzb7ud9jgSUrOyjz5GAkhWlD8q27X7e55A+KNu2+3mfIwElK/vocySgZGUffQ4REZG/8glyaSw8
+  </data>
+ </layer>
+ <layer name="Tallgrass" width="100" height="100">
+  <data encoding="base64" compression="zlib">
+   eJzt20tqw0AURFEtIiH/3/43GQlDplYgsa6fz4GeedBFIUvWcy8LAPS8ruv96E3wQx8t+mjRR8vHur6O3gREPa3r5ehN/IEpOabcP+RokaNFjhY5WuRokaNlUo6H5fqf3cs5tt9GzzvX47rellOWc5+9dNYpObZ3Up871/1yyrFnXfr7YEqO39iu822Pd8v5zOX3jpNybBnKe9xjUo7y9buXHC1ytMjRIkfLlBxT5udTcgAAAAAAAAAA3KIpZ8OnmPLfqCn00aKPFn206KNFHy36aCmfDZ9iytnwKW7xbPgUU86GTzHlbPgUnq9a9NGijxZ9tOijxdlwOJYZfYt7VIs+WvTRoo8WfbToo0UfLWb0/8+MvsWM/nqZ0beY0bd4vmrRR4s+WvTRoo8WM3oAAACAY3wDQW8qLQ==
+  </data>
+ </layer>
+ <objectgroup name="collision" width="100" height="100">
+  <object x="0" y="0" width="3200" height="128"/>
+  <object x="3104" y="128" width="96" height="3072"/>
+  <object x="0" y="3072" width="3104" height="128"/>
+  <object x="0" y="128" width="96" height="2944"/>
+  <object x="96" y="640" width="256" height="64"/>
+  <object x="96" y="1280" width="256" height="64"/>
+  <object x="96" y="1920" width="256" height="64"/>
+  <object x="96" y="2560" width="256" height="64"/>
+  <object x="768" y="2912" width="64" height="160"/>
+  <object x="1568" y="2912" width="64" height="160"/>
+  <object x="2368" y="2912" width="64" height="160"/>
+  <object x="768" y="128" width="64" height="160"/>
+  <object x="1568" y="128" width="64" height="160"/>
+  <object x="2368" y="128" width="64" height="160"/>
+  <object x="2816" y="640" width="288" height="32"/>
+  <object x="2816" y="1280" width="288" height="32"/>
+  <object x="2816" y="1920" width="288" height="32"/>
+  <object x="2816" y="2560" width="288" height="32"/>
+  <object x="416" y="640" width="352" height="32"/>
+  <object x="768" y="352" width="64" height="576"/>
+  <object x="832" y="608" width="32" height="128"/>
+  <object x="864" y="640" width="288" height="64"/>
+  <object x="1632" y="608" width="32" height="128"/>
+  <object x="1664" y="640" width="288" height="64"/>
+  <object x="1568" y="352" width="64" height="576"/>
+  <object x="1216" y="640" width="352" height="32"/>
+  <object x="2432" y="608" width="32" height="128"/>
+  <object x="2464" y="640" width="288" height="64"/>
+  <object x="2368" y="352" width="64" height="576"/>
+  <object x="2016" y="640" width="352" height="32"/>
+  <object x="2432" y="1248" width="32" height="128"/>
+  <object x="2464" y="1280" width="288" height="64"/>
+  <object x="2368" y="992" width="64" height="576"/>
+  <object x="2016" y="1280" width="352" height="32"/>
+  <object x="1632" y="1248" width="32" height="128"/>
+  <object x="1664" y="1280" width="288" height="64"/>
+  <object x="1568" y="992" width="64" height="576"/>
+  <object x="1216" y="1280" width="352" height="32"/>
+  <object x="832" y="1248" width="32" height="128"/>
+  <object x="864" y="1280" width="288" height="64"/>
+  <object x="768" y="992" width="64" height="576"/>
+  <object x="416" y="1280" width="352" height="32"/>
+  <object x="832" y="1888" width="32" height="128"/>
+  <object x="864" y="1920" width="288" height="64"/>
+  <object x="768" y="1632" width="64" height="576"/>
+  <object x="416" y="1920" width="352" height="32"/>
+  <object x="1632" y="1888" width="32" height="128"/>
+  <object x="1664" y="1920" width="288" height="64"/>
+  <object x="1568" y="1632" width="64" height="576"/>
+  <object x="1216" y="1920" width="352" height="32"/>
+  <object x="2432" y="1888" width="32" height="128"/>
+  <object x="2464" y="1920" width="288" height="64"/>
+  <object x="2368" y="1632" width="64" height="576"/>
+  <object x="2016" y="1920" width="352" height="32"/>
+  <object x="832" y="2528" width="32" height="128"/>
+  <object x="864" y="2560" width="288" height="64"/>
+  <object x="768" y="2272" width="64" height="576"/>
+  <object x="416" y="2560" width="352" height="32"/>
+  <object x="1632" y="2528" width="32" height="128"/>
+  <object x="1664" y="2560" width="288" height="64"/>
+  <object x="1568" y="2272" width="64" height="576"/>
+  <object x="1216" y="2560" width="352" height="32"/>
+  <object x="2432" y="2528" width="32" height="128"/>
+  <object x="2464" y="2560" width="288" height="64"/>
+  <object x="2368" y="2272" width="64" height="576"/>
+  <object x="2016" y="2560" width="352" height="32"/>
+ </objectgroup>
+ <objectgroup name="environment" width="100" height="100">
+  <object name="Team0Spawn0" type="SpawnPoint" x="192" y="192" width="32" height="32">
+   <properties>
+    <property name="team" value="0"/>
+   </properties>
+  </object>
+  <object name="Team1Spawn0" type="SpawnPoint" x="2768" y="2832" width="32" height="32">
+   <properties>
+    <property name="team" value="1"/>
+   </properties>
+  </object>
+ </objectgroup>
+</map>

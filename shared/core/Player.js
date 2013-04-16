@@ -99,12 +99,12 @@ PlayerClass = EntityClass.extend({
 
     if (this.health <= 0) {
       /* if (IS_SERVER && !this.isDead) {
-        Server.stats.log('death_pos', {
-          'x' : this.pos.x,
-          'y' : this.pos.y,
-          'team' : this.team
-        });
-      } */
+       Server.stats.log('death_pos', {
+       'x' : this.pos.x,
+       'y' : this.pos.y,
+       'team' : this.team
+       });
+       } */
       this.isDead = true;
       this.physBody.SetActive(false);
     } else {
@@ -144,19 +144,19 @@ PlayerClass = EntityClass.extend({
 
       //are we shooting?
       //if (IS_SERVER) {
-        for (var i = 0; i < this.weapons.length; i++)
-          this.weapons[i].firing = false;
+      for (var i = 0; i < this.weapons.length; i++)
+        this.weapons[i].firing = false;
 
-        //CLM if you're dead, don't fire things!
-        if (!this.isDead) {
-          if (this.pInput.fire0 && this.energy >= this.weapons[0].energyCost) {
-            this.weapons[0].onFire(this);
-          } else if (this.pInput.fire1 && this.energy >= this.weapons[1].energyCost) {
-            this.weapons[1].onFire(this);
-          } else if (this.pInput.fire2 && this.energy >= this.weapons[2].energyCost) {
-            this.weapons[2].onFire(this);
-          }
+      //CLM if you're dead, don't fire things!
+      if (!this.isDead) {
+        if (this.pInput.fire0 && this.energy >= this.weapons[0].energyCost) {
+          this.weapons[0].onFire(this);
+        } else if (this.pInput.fire1 && this.energy >= this.weapons[1].energyCost) {
+          this.weapons[1].onFire(this);
+        } else if (this.pInput.fire2 && this.energy >= this.weapons[2].energyCost) {
+          this.weapons[2].onFire(this);
         }
+      }
       //}
       if (this.pInput.fire0_off) {
         this.pInput.fire0 = false;
@@ -230,7 +230,7 @@ PlayerClass = EntityClass.extend({
   },
 
   on_setWeapons : function(msg) {
-
+    console.log(msg);
     //set our weapons based on the message input
     var weapon0Class = Factory.nameClassMap[msg.wep0];
     this.weapons[0] = new (weapon0Class)();
