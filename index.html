@@ -106,12 +106,12 @@
       var init = function() {
 
         gSM.init();
-        /* var sound = gSM.loadAsync("./sound/bg_menu.ogg", function(s) {
-         gSM.playSound("./sound/bg_menu.ogg", {
+        var sound = gSM.loadAsync("./sound/otomata_loop.ogg", function(s) {
+         gSM.playSound("./sound/otomata_loop.ogg", {
          looping : true,
          volume : 0.25
          });
-         }); */
+         }); 
         var menu_bump = gSM.loadAsync("./sound/menu_bump.ogg", function() {
         });
         var menu_select = gSM.loadAsync("./sound/menu_select.ogg", function() {
@@ -308,7 +308,7 @@
         gGameEngine.setup();
         Logger.log("setup engines");
 
-        gSM.stopAll();
+        //gSM.stopAll();
         /* gSM.playSound("./sound/bg_game.ogg", {
         looping : true,
         volume : 0.25
