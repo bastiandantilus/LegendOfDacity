@@ -73,7 +73,7 @@ SoundManager = Class.extend({
 	//----------------------------
 	isLoaded:function(path)
 	{
-		var sd = this.clips[obj.path];
+		var sd = this.clips[path];
 		if(sd == null)
 			return false;
 		return sd.l;

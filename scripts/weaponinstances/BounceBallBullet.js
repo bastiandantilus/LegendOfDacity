@@ -85,7 +85,7 @@ BounceBallBulletClass = WeaponInstanceClass.extend({
     }
 	
     if (otherBody ==null || !otherBody.GetUserData()) {
-      Logger.log("Invalid collision object");
+      //Logger.log("Invalid collision object");
       return false; //invalid object??
     }
     var physOwner = otherBody.GetUserData().ent;

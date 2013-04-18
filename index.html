@@ -140,7 +140,10 @@
       //------------------
       //var loadGame = function(gameURL, player_game_key) {
       var play_game = function() {
-
+		if(typeof gGameEngine !== "undefined" && gGameEngine.preloadComplete) {
+			gGameEngine = new GameEngineClass();
+			gameLoadComplete(/*gameURL, player_game_key*/);
+		}
         //mrdoob_stats = new Stats();
 
         var inputScripts = [
@@ -178,49 +181,67 @@
 
         //kick off our animation
         requestAnimFrame(run);
-        window.bot_id = setInterval(bot_ai, 1000);
+        
+        gGameEngine.nextBot = 1000;
+        window.bot_pid = setInterval(bot_ai, 1000);
         /* loop_run(1000, function() {
          gGameEngine.gSocket.send_ping({
          now : new Date().getTime()
          });
          }); */
       }
+      
+      var bot_respawning = false;
+      var bot_deaths = 0;
 
       var bot_ai = function() {
-        var bot1 = gGameEngine.gPlayers.bot1;
-        if (bot1.isDead && bot_respawning == false) {
-          bot_deaths++;
-          setTimeout(function() {
-            gGameEngine.respawnEntity({
-              from : "bot1",
-              wep0 : "BounceBallGun",
-              wep1 : "ChainGun",
-              wep2 : "Shield"
-            });
-            bot_respawning = false;
-          }, 5000);
-          bot_respawning = true;
-
-        }
+      	if(gGameEngine.currentTick > gGameEngine.nextBot) {
+        	spawnPlayer("bot" + bots++, 0, "Bot "+bots, 500, 500);
+        	gGameEngine.nextBot += 1000;
+       }
+      	
+      	
         for (px in gGameEngine.gPlayers) {
           if (gGameEngine.gPlayers[px].energy < gGameEngine.gPlayers[px].maxEnergy) {
-            gGameEngine.gPlayers[px].energy += 1;
+            gGameEngine.gPlayers[px].energy += 5;
           }
           if (px != "!1") {
             var pp = gGameEngine.gPlayers[px];
+            
+                    
+	        if (pp.isDead && bot_respawning == false) {
+	          bot_deaths++;
+	          setTimeout(function() {
+	            gGameEngine.respawnEntity({
+	              from : px,
+	              wep0 : "RocketLauncher",
+	              wep1 : "Shield",
+	              wep2 : "ChainGun"
+	            });
+	            bot_respawning = false;
+	          }, 5000);
+	          bot_respawning = true;
+	
+	        }
+            
             //console.log(pp);
             if (pp.pos) {
               var rand = Math.random();
+              var pp_pos = fudgePlayerPosition(pp.pos);
+      		  var faceAngleRadians = Math.atan2(gGameEngine.gPlayer0.pos.y - pp.pos.y, gGameEngine.gPlayer0.pos.x - pp.pos.x);
+		      var faceAngle0to7 = (Math.round(faceAngleRadians / (2 * Math.PI) * 8) + 8) % 8;
+              
+              
               var msg = {
                 from : px,
-                faceAngle0to7 : Math.floor(Math.random() * 8),
-                fire0 : rand > 0.8,
+                faceAngle0to7 : faceAngle0to7,
+                fire0 : rand > 0.7,
                 fire1 : false,
-                fire2 : rand < 0.2,
+                fire2 : rand < 0.3,
                 legRotation : 0,
                 walking : true,
-                x : gGameEngine.gPlayer0.pos.x - pp.pos.x,
-                y : gGameEngine.gPlayer0.pos.y - pp.pos.y
+                x : gGameEngine.gPlayer0.pos.x - pp_pos.x,
+                y : gGameEngine.gPlayer0.pos.y - pp_pos.y
               };
               //console.log(msg);
               gGameEngine.gSocket.q_input(msg);
@@ -231,6 +252,13 @@
           }
         }
       };
+      
+      var fudgePlayerPosition = function(pos) {
+      	var factor = 400;
+      	var fudgex = Math.sin(gGameEngine.currentTick/5.0) * factor;
+     	var fudgey = Math.cos(gGameEngine.currentTick/5.0) * factor
+      	return { x: pos.x + fudgex, y: pos.y + fudgey}
+      }
 
       var gameLoadComplete = function(/*gameURL, player_game_key*/) {
 
@@ -243,6 +271,7 @@
             p0.toOthers = p0.toAll = gGameEngine.gSocket;
             p0.color = msg.color;
             gGameEngine.gPlayer0 = p0;
+            p0.resetStats();
             readyToRock();
 
             Logger.log("welcome " + msg.youare);
@@ -291,6 +320,9 @@
             }
           }
         };
+
+		gGameEngine.entities = [];
+		gGameEngine.currentTick = 0;
 
         //disablePopup();
         //load our game and move the world forward.
@@ -358,7 +390,7 @@
         window.Server = {};
         Server.broadcaster = gGameEngine.gSocket;
 
-        var spawnPlayer = function(id, team, userID, x, y) {
+        window.spawnPlayer = function(id, team, userID, x, y) {
           var msg = {
             id : id,
             type : "Player",
@@ -383,8 +415,9 @@
         var player0 = "!1";
 
         var player = spawnPlayer(player0, 1, "player0", 400, 400);
-
-        var bot = spawnPlayer("bot1", 0, "Bot", 500, 500);
+		
+		window.bots = 0;
+        var bot = spawnPlayer("bot" + bots++, 0, "Bot", 500, 500);
 
         packet_handler.welcome({
           youare : player.id,
@@ -394,14 +427,13 @@
       }
       //-----------------------------------------
 
-      var bot_respawning = false;
-      var bot_deaths = 0;
+
       var run = function() {
 
         if (gGameEngine.gPlayer0.isDead) {
-          window.clearInterval(bot_id);
+          window.clearInterval(bot_pid);
           document.body.innerHTML = window.savedHTML;
-          document.getElementById('win_or_lose').innerHTML = "<h1 style='font-size:100px/150px; color: black;'>The Bot got you... And you killed it " + bot_deaths + " Times. Thanks for Playing!<h1>";
+          document.getElementById('win_or_lose').innerHTML = "<h1 style='font-size:100px/150px; color: black;'>The Bot got you... And you killed " + bot_deaths + " Bots. Thanks for Playing!<h1>";
           document.getElementById('play_button').innerHTML = "Play Again";
           return;
         }
@@ -521,7 +553,7 @@
 				looping : true,
 				volume : 0.25
 				});
-				return false;"
+				return false;"w
 				onmouseover="playSoundInstance('./sound/bfxr_low_coin.wav')">Mute Sound</a>
 			</p>
 			<footer class="navbar">

@@ -261,19 +261,21 @@ ClientGameEngineClass = GameEngineClass.extend({
       assets.push("img/" + map.tilesets[i].image.replace(/^.*[\\\/]/, ''));
 
     //sounds
-    assets.push("./sound/bg_game.ogg");
-    assets.push("./sound/bounce0.ogg");
-    assets.push("./sound/energy_pickup.ogg");
-    assets.push("./sound/explode0.ogg");
-    assets.push("./sound/grenade_shoot0.ogg");
-    assets.push("./sound/item_pickup0.ogg");
-    assets.push("./sound/machine_shoot0.ogg");
-    assets.push("./sound/quad_pickup.ogg");
-    assets.push("./sound/rocket_shoot0.ogg");
-    assets.push("./sound/shield_activate.ogg");
-    assets.push("./sound/shotgun_shoot0.ogg");
-    assets.push("./sound/spawn0.ogg");
-    assets.push("./sound/sword_activate.ogg");
+    if(gSM.enabled) {
+      assets.push("./sound/bg_game.ogg");
+      assets.push("./sound/bounce0.ogg");
+      assets.push("./sound/energy_pickup.ogg");
+      assets.push("./sound/explode0.ogg");
+      assets.push("./sound/grenade_shoot0.ogg");
+      assets.push("./sound/item_pickup0.ogg");
+      assets.push("./sound/machine_shoot0.ogg");
+      assets.push("./sound/quad_pickup.ogg");
+      assets.push("./sound/rocket_shoot0.ogg");
+      assets.push("./sound/shield_activate.ogg");
+      assets.push("./sound/shotgun_shoot0.ogg");
+      assets.push("./sound/spawn0.ogg");
+      assets.push("./sound/sword_activate.ogg");
+    }
 
     loadAssets(assets, function() {
       xhrGet("img/grits_effects.json", false, function(data) {
