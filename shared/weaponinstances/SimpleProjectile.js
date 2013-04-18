@@ -79,7 +79,7 @@ SimpleProjectileClass = WeaponInstanceClass.extend({
 					this._spriteAnim.pushFrame(sprites[i]);
 			}
 
-			if(settings.spawnSound)
+			if(settings.spawnSound && gGameEngine.playWorldSound)
 			{
 				gGameEngine.playWorldSound(settings.spawnSound,x,y);
 			}
