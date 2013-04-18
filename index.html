@@ -17,7 +17,7 @@
 				background: url(img/tilesets/Greenland_Ocean.gif);
 			}
 			#welcomescreen {
-				background: #CCFFCC;
+				background: rgba(255,255,255,0.6);
 				padding: 15px;
 				border-radius: 10px;
 			}
@@ -465,7 +465,7 @@
 
 	<body>
 
-		<div class="navbar navbar-inverse navbar-fixed-top">
+		<div class="navbar navbar-inverse navbar-fixed-top" style="display:none;">
 			<div class="navbar-inner">
 				<div class="container">
 					<button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
@@ -491,9 +491,9 @@
 			</div>
 		</div>
 
-		<div class="container" id='welcomescreen'>
+		<div class="container hero-unit" id='welcomescreen'>
 
-			<h1>The Legend of Dacity</h1>
+			<img src="img/LoD_logo.png" style="margin:10px auto; display:block;" alt="The Legendary Legend of Audacious Dacity" title="The Legendary Legend of Audacious Dacity" />
 			<div id='game_canvas' style="display:none">
 				<canvas id='canvas' width="800px" height="600px">
 					Available for play on HTML5 enabled browsers such as the Desktop version of Chrome.
@@ -504,16 +504,28 @@
 					</div>
 				</div>
 			</div>
-			<div id="win_or_lose">&nbsp;</div>
-			<p>
+			<div id="win_or_lose">
+				&nbsp;
+			</div>
+			<p style="margin: 10px auto; text-align:center;">
 				<a href="#" id="play_button" class="btn btn-primary btn-large"
 				onclick="playSoundInstance('./sound/bfxr_magic.wav');
 				$doc('#play_button').innerHTML = 'Loading...';
 				play_game(); return false;"
-				onmouseover="playSoundInstance('./sound/bfxr_low_coin.wav')">Play</a>
+				onmouseover="playSoundInstance('./sound/bfxr_low_coin.wav')">Start Game</a>
+
+				<a href="#" id="mute_button" class="btn btn-large"
+				onclick="gSM.stopAll(); gSM.enabled = !gSM.enabled;
+				this.innerHTML = {true : 'Mute', false : 'Unmute'}[gSM.enabled];
+				gSM.playSound('./sound/otomata_loop.ogg', {
+				looping : true,
+				volume : 0.25
+				});
+				return false;"
+				onmouseover="playSoundInstance('./sound/bfxr_low_coin.wav')">Mute Sound</a>
 			</p>
 			<footer class="navbar">
-				<p id="contact">
+				<p id="contact" style="text-align:center">
 					&copy; Copyright 2013 by <a href="http://bastiandantilus.com" title="View Scott's blog">Scott Robert Lawrence</a>
 				</p>
 			</footer>
