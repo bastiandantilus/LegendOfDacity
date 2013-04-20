@@ -231,6 +231,7 @@
                   wep2 : "ChainGun"
                 });
                 bot_respawning = false;
+                pp.isDead = false;
               }, 5000);
               bot_respawning = true;
 
@@ -239,7 +240,7 @@
             //console.log(pp);
             if (pp.pos) {
               var rand = Math.random();
-              var pp_pos = fudgePlayerPosition(pp.pos);
+              var pp_pos = fudgePlayerPosition(pp.pos, pp);
               var faceAngleRadians = Math.atan2(gGameEngine.gPlayer0.pos.y - pp.pos.y, gGameEngine.gPlayer0.pos.x - pp.pos.x);
               var faceAngle0to7 = (Math.round(faceAngleRadians / (2 * Math.PI) * 8) + 8) % 8;
 
@@ -264,10 +265,10 @@
         }
       };
 
-      var fudgePlayerPosition = function(pos) {
+      var fudgePlayerPosition = function(pos, bot) {
         var factor = 400;
-        var fudgex = Math.sin(gGameEngine.currentTick / 5.0) * factor;
-        var fudgey = Math.cos(gGameEngine.currentTick / 5.0) * factor
+        var fudgex = Math.sin((gGameEngine.currentTick + bot.id) / 5.0) * factor;
+        var fudgey = Math.cos((gGameEngine.currentTick + bot.id) / 5.0) * factor;
         return {
           x : pos.x + fudgex,
           y : pos.y + fudgey
@@ -356,9 +357,11 @@
 
         if (gSM.enabled) {
           gSM.stopAll();
-          gSM.playSound("./sound/otomata_loop.ogg", {
-            looping : true,
-            volume : 0.25
+          var sound = gSM.loadAsync("./sound/otomata_loop.ogg", function(s) {
+            gSM.playSound("./sound/otomata_loop.ogg", {
+              looping : true,
+              volume : 0.25
+            });
           });
         }
 
@@ -450,6 +453,16 @@
           document.getElementById('win_or_lose').innerHTML = "<h1 style='font-size:100px/150px; color: black;'>The Bot got you... And you killed " + gGameEngine.gPlayer0.numKills + " Bots. Thanks for Playing!<h1>";
           document.getElementById('play_fantasy_button').innerHTML = "Play Again (fantasy)";
           document.getElementById('play_GRITS_button').innerHTML = "Play Again (GRITS)";
+          if (gSM.enabled) {
+            gSM.stopAll();
+            var sound = gSM.loadAsync("./sound/480806_Pentimento.ogg", function(s) {
+              gSM.playSound("./sound/480806_Pentimento.ogg", {
+                looping : true,
+                volume : 0.25
+              });
+            });
+          }
+
           return;
         }
 

@@ -262,7 +262,7 @@ ClientGameEngineClass = GameEngineClass.extend({
 
     //sounds
     if(gSM.enabled) {
-      assets.push("./sound/bg_game.ogg");
+      //assets.push("./sound/bg_game.ogg");
       assets.push("./sound/bounce0.ogg");
       assets.push("./sound/energy_pickup.ogg");
       assets.push("./sound/explode0.ogg");

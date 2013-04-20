@@ -18,3 +18,10 @@ Song Title: A Basic Techno Game Loop
 Artist:	 ddoodm
 Album:	http://www.newgrounds.com/audio/listen/233175
 License:	Attribution Non-commercial Share Alike
+
+File Name : 480806_Pentimento.ogg
+Origional File Name : 480806_Pentimento.mp3
+Song Title: Pentimento
+Artist:	 SasquaMox
+Album:	http://www.newgrounds.com/audio/listen/480806
+License:	Attribution Non-commercial Share Alike
