@@ -108,8 +108,8 @@
       var init = function() {
 
         gSM.init();
-        var sound = gSM.loadAsync("./sound/otomata_loop.ogg", function(s) {
-          gSM.playSound("./sound/otomata_loop.ogg", {
+        var sound = gSM.loadAsync("./sound/233175_hardcore_loop.ogg", function(s) {
+          gSM.playSound("./sound/233175_hardcore_loop.ogg", {
             looping : true,
             volume : 0.25
           });
@@ -354,11 +354,13 @@
         gGameEngine.setup();
         Logger.log("setup engines");
 
-        //gSM.stopAll();
-        /* gSM.playSound("./sound/bg_game.ogg", {
-        looping : true,
-        volume : 0.25
-        }); */
+        if (gSM.enabled) {
+          gSM.stopAll();
+          gSM.playSound("./sound/otomata_loop.ogg", {
+            looping : true,
+            volume : 0.25
+          });
+        }
 
         //Logger.log("connecting to server: " + gameURL);
         /* gGameEngine.gSocket = protoize(io.connect(gameURL), packet_handler);
@@ -561,7 +563,7 @@
 				<a href="#" id="mute_button" class="btn btn-large"
 				onclick="gSM.stopAll(); gSM.enabled = !gSM.enabled;
 				this.innerHTML = {true : 'Mute', false : 'Unmute'}[gSM.enabled];
-				gSM.playSound('./sound/otomata_loop.ogg', {
+				gSM.playSound('./sound/233175_hardcore_loop.ogg', {
 				looping : true,
 				volume : 0.25
 				});

@@ -11,3 +11,10 @@ Song Title: Lights (Dubstep Rmx)
 Artist:	 construct
 Album:	http://sampleswap.org/viewtopic.php?t=6110
 License:	Attribution Non-commercial No Derivatives
+
+File Name : 233175_hardcore_loop.ogg
+Origional File Name : 233175_hardcore_loop.mp3
+Song Title: A Basic Techno Game Loop
+Artist:	 ddoodm
+Album:	http://www.newgrounds.com/audio/listen/233175
+License:	Attribution Non-commercial Share Alike
