@@ -49,14 +49,15 @@ HealthCanisterClass = EntityClass.extend({
   },
   //-----------------------------------------
   onTouch: function (otherBody, point, impulse) {
+    
     if (!this.physBody) return false;
 
     if (!otherBody.GetUserData()) return false; //invalid object??
     var physOwner = otherBody.GetUserData().ent;
     if (physOwner != null) {
       if (physOwner._killed) return false;
-      if (physOwner.Health < physOwner.maxHealth) 
-        physOwner.Health = Math.min(physOwner.maxHealth, physOwner.health + 10);
+      if (physOwner.health < physOwner.maxHealth) 
+        physOwner.health = Math.min(physOwner.maxHealth, physOwner.health + 10);
       this.markForDeath = true;
       
     }

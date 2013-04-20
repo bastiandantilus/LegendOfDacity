@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" width="256" height="256" tilewidth="32" tileheight="32">
+ <tileset firstgid="1" name="plowed_soil" tilewidth="32" tileheight="32">
+  <image source="img/tilesets/plowed_soil.png" trans="ffffff" width="96" height="192"/>
+ </tileset>
+ <tileset firstgid="19" name="tallgrass" tilewidth="32" tileheight="32">
+  <image source="img/tilesets/tallgrass.png" trans="ffffff" width="96" height="192"/>
+ </tileset>
+ <tileset firstgid="37" name="reed" tilewidth="32" tileheight="32">
+  <image source="img/tilesets/reed.png" trans="ffffff" width="96" height="320"/>
+ </tileset>
+ <tileset firstgid="67" name="Greenland_Ocean" tilewidth="32" tileheight="32">
+  <image source="img/tilesets/Greenland_Ocean.gif" width="64" height="64"/>
+ </tileset>
+ <tileset firstgid="71" name="holekgrassaltother" tilewidth="32" tileheight="32">
+  <image source="tilesets/threesided/holekgrassaltother.png" trans="ffffff" width="192" height="192"/>
+ </tileset>
+ <tileset firstgid="107" name="grassalt" tilewidth="32" tileheight="32">
+  <image source="tilesets/twosided/grassalt.png" trans="ffffff" width="160" height="192"/>
+ </tileset>
+ <tileset firstgid="137" name="hole" tilewidth="32" tileheight="32">
+  <image source="tilesets/twosided/hole.png" trans="ffffff" width="160" height="192"/>
+ </tileset>
+ <layer name="Background" width="256" height="256">
+  <data encoding="base64" compression="zlib">
+   eJzt1CESgDAMRcEYVA8PAi7Qk8IMSGZiaIlYsS7imZ8WES2xPLI7AAAAAAAAAAAAoI71chToAObrcf+A/cVWoA8Ypyf+7gPGsn8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADgayffkQ7O
+  </data>
+ </layer>
+ <layer name="Blend" width="256" height="256">
+  <data encoding="base64" compression="zlib">
+   eJzt20EKgCAQBVCvXFBBdfjyAGNRhJjvwaxEcPM3M2NK1/bC2XrjPtCu4aw5qLHiuwAAAACA96YU9/+Wiu8CvpdnfFtQpdkg0D7zf+iX/EO/5B/6Jf/Qr7z/G/X55R/+Lff5oz8A9v8BAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACApw6XahUM
+  </data>
+ </layer>
+ <layer name="Grass" width="256" height="256">
+  <data encoding="base64" compression="zlib">
+   eJzt1DEKgDAURME0iiDiSb2ACurNjb1BLSSEzMArA9v8hPCsiXWJ2hfvgXINsT7RmHEXAAAAAAAA8N0cWxKtGXcB/3P/UK8tNgX3D7W6/oD9piPTHgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAoDwnQvkPmQ==
+  </data>
+ </layer>
+ <layer name="Bushes" width="256" height="256" visible="0">
+  <data encoding="base64" compression="zlib">
+   eJzt3D1OAzEAhNFch56fAAEE9z8UicRKVMkOKGDPvie5Q7EovgIDs9sBAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACJh+N5dAdsUkub+odcS5v6h9zT8RzcAZv0cjxv7gCATbk9nnt3wCa1vM15/4NcS5v6h1xLm/qHXEub+odcS5v6h1xLm/qHXEub+ofcqZv97rq/O2+5A/7T3YWzuF3xtctZurlZ+fVbvANG8HzmfP/fl9Pfwr+uPPuvc+6zt34HjOD9zPn44WcuPzcfLnz+b+/Y/8Ed1/4+oM3SzTWbaLkD2rS8zXv/h1xLm/qHXEub+odcS5v6h1zLNp/9P8i1bPPZ/wOA9Vq2+ez/Qa7lbc77H+Ra2tQ/5Fra1D/kWtrUP+Ra2tQ/5Fra1D/kWtrUP+Ratvns/9Futt28ljtgBLPt5rXcASOYdTfP/h+MqWWbz/4f5Fre5r3/Q66lTf1DrqVN/UOupU39Q65lm8/+H+Ratvns/wHAei3bfPb/INfyNuf9D3Itbeofci1t6h9yLW3qH3Itbeofci1t6h9yLW3qH3It23z2/2g3225eyx0wgtl281rugBHMuptn/w/G1LLNZ/8Pci1v897/IdfSpv4h19Km/iHX0qb+IdeyzWf/D3It23z2/wBgvZZtPvt/kGt5m/P+B7mWNvUPuZY29Q+5ljb1D7mWNvUPuZY29Q+5ljb1D7mWbT77f7SbbTev5Q4YwWy7eS13wAhm3c2z/wdjatnms/8HuZa3ee//kGtpU/+Qa2lT/5BraVP/kGvZ5rP/B7mWbT77fwCwXss2n/0/yLW8zXn/g1xLm/qHXEub+odcS5v6h1xLm/oHAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAYGs+AXBBLDw=
+  </data>
+ </layer>
+ <layer name="Tallgrass" width="256" height="256" visible="0">
+  <data encoding="base64" compression="zlib">
+   eJzt3UFOG1EQRdG/CBCEhAD732T6ywtwRyFl+71zpJp50DW4lt0032sBAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAB/49cxv299EcBN6B966R966R96fRzzdeuLAABG/Tjm560v4huk7AGTUr7/p+wBk1K6SdkDJqV0k7IHTErpJmUPmJTSTcoeMCmlm5Q9YFJKNyl7wKTdzct6/L+dp+wB/2o/C/N2cl6PeV+Xdq69drqtlD1g0n6m//PkPK9LN2dm+vN1yh5wr/bn5t3E07re2D3/n1DKHjBpd7ObefQmUvaASSn3zVP2gEkp3aTsAZNSuknZAyaldJOyB0xK6SZlD5iUcv5fyh4AAAAAAAAAAAAAAAAAAAAAAAAAAABw1v4db7+5DZ2czQ+99A+99A+99A+99A+99A+99A+9dv8vyzMAkGI/0/N2cl6PeV+X94Brr/UeAffv45jPk/O8Lv2fGd8TIMv+/L/bflrX3yu+hq8N+L92/7t9bUMf9/+hl/6hl/6hl/6hl/6h135WwL1/AOC7OWMQernHAL30D730D730D730D730D730D72cMQhZnDEIvZwxCJzhjEHo5YxB6OX+P/TSP/TSP/TSP/TSP/RyxiAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAI/qD06xKi0=
+  </data>
+ </layer>
+ <objectgroup name="collision" width="256" height="256" visible="0">
+  <object x="2528" y="2368" width="3200" height="128"/>
+  <object x="5632" y="2496" width="96" height="3072"/>
+  <object x="2528" y="5440" width="3104" height="128"/>
+  <object x="2528" y="2496" width="96" height="2944"/>
+  <object x="2624" y="3008" width="256" height="64"/>
+  <object x="2624" y="3648" width="256" height="64"/>
+  <object x="2624" y="4288" width="256" height="64"/>
+  <object x="2624" y="4928" width="256" height="64"/>
+  <object x="3296" y="5280" width="64" height="160"/>
+  <object x="4096" y="5280" width="64" height="160"/>
+  <object x="4896" y="5280" width="64" height="160"/>
+  <object x="3296" y="2496" width="64" height="160"/>
+  <object x="4096" y="2496" width="64" height="160"/>
+  <object x="4896" y="2496" width="64" height="160"/>
+  <object x="5344" y="3008" width="288" height="32"/>
+  <object x="5344" y="3648" width="288" height="32"/>
+  <object x="5344" y="4288" width="288" height="32"/>
+  <object x="5344" y="4928" width="288" height="32"/>
+ </objectgroup>
+ <objectgroup name="environment" width="256" height="256" visible="0">
+  <object name="Team0Spawn0" type="SpawnPoint" x="4288" y="4000" width="32" height="32">
+   <properties>
+    <property name="team" value="0"/>
+   </properties>
+  </object>
+  <object name="Team1Spawn0" type="SpawnPoint" x="5296" y="5200" width="32" height="32">
+   <properties>
+    <property name="team" value="1"/>
+   </properties>
+  </object>
+ </objectgroup>
+</map>
