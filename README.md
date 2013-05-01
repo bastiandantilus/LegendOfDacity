@@ -13,11 +13,11 @@ Features
 --------
 
  - Play on a fantastical custom map (created using TILED) or the original GRITS map
- -- Featuring open license art from [Daniel Eddeland][5] (CC-BY-SA 3.0)
+  - Featuring open license art from [Daniel Eddeland][5] (CC-BY-SA 3.0)
  - Using the [GRITS engine][6] without the need to connect to a server (Apache license)
  - Intense circling Artificial Intelligence!
  - [Bootstrap][7] enabled button shininess (Apache license)
- - Original music created using [Otomata][8]
+ - Original music created using [Otomata][8] and Audacity
  - Original sound effects created using [bfxr][9]
 
 The Code
@@ -27,6 +27,16 @@ The Code
 
 The code and all parts of [this posting][11] are licensed under Creative Commons CC BY-NC-SA license.
 
+Future plans
+------------
+ - Modularize the ability to spawn bots into the game and add it back into the full GRITS codebase, essentially adding AI-controlled units to the existing GRITS game.
+ - Create a separate single-player game with a fantasy emphasis, continuing the conversion
+  - Replace the robotic characters with elves
+  - Potions instead of repair kits
+  - Swords instead of machine guns
+ - Modularize the single-player game so that new games can be made easily without touching any of the base code
+
+*An HTML5 game for the Udacity HTML5 Game Dev Class Contest, April 2013.*
 
   [1]: https://rawgithub.com/bastiandantilus/LegendOfDacity/master/img/LoD_logo.png
   [2]: http://rawgithub.com/bastiandantilus/LegendOfDacity/master/index.html "Play LoD"
@@ -40,5 +50,6 @@ The code and all parts of [this posting][11] are licensed under Creative Commons
   [10]: https://github.com/bastiandantilus/LegendOfDacity "On Github"
   [11]: http://forums.udacity.com/questions/100050122/
 
-An HTML5 game for the Udacity HTML5 Game Dev Class Contest, April 2013.
+
+
 
